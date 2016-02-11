@@ -1,0 +1,6 @@
+framework module POPMediaPicker {
+  umbrella header "POPMediaPicker-umbrella.h"
+
+  export *
+  module * { export * }
+}

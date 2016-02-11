@@ -1,0 +1,6 @@
+framework module POPOrientationNavigationVC {
+  umbrella header "POPOrientationNavigationVC-umbrella.h"
+
+  export *
+  module * { export * }
+}

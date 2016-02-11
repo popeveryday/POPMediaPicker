@@ -7,8 +7,9 @@
 //
 
 #import "POPViewController.h"
+#import <POPMediaPicker/POPMediaPicker.h>
 
-@interface POPViewController ()
+@interface POPViewController ()<POPMediaPickerDelegate>
 
 @end
 
@@ -17,8 +18,49 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+
+    UIButton* button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [button setTitle:@"Add Media" forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(addMedia:) forControlEvents:UIControlEventTouchUpInside];
+    button.frame = CGRectMake(0, 0, 140, 40);
+    button.center = self.view.center;
+    [self.view addSubview:button];
 }
+
+-(void) addMedia:(id)sender{
+    POPMediaPickerVC* picker = [[POPMediaPickerVC alloc] initWithSourceAlbum:POPMediaPickerAlbumCameraRollOnly mediaType:POPMediaPickerFileTypeAll];
+    picker.returnOnSelectSingleItem = YES;
+    picker.itemOrderDescending = YES;
+    picker.showCaptureButton = YES;
+    picker.popMediaPickerDelegate = self;
+    
+    [self presentViewController:picker animated:YES completion:nil];
+}
+
+#pragma POPMediaPicker delegate functions
+
+//implement to show Image Capture Button (showCaptureButton = YES)
+-(void)popMediaPickerDidSaveCaptureImage:(UIImage *)image picker:(POPMediaPickerVC *)picker{
+    
+}
+
+//implement to show Video Record Button (showCaptureButton = YES)
+-(void)popMediaPickerDidSaveRecordVideoToTempFolder:(NSString *)file picker:(POPMediaPickerVC *)picker{
+    
+}
+
+//implement to handle saved files to temp folder
+-(void)popMediaPickerDidSaveFilesToTempFolder:(NSMutableArray *)savedFiles picker:(POPMediaPickerVC *)picker
+{
+    
+}
+
+//OR implement to handle saved files to temp folder
+//-(void)popMediaPickerDidSaveOneFileToTempFolder:(NSString *)file picker:(POPMediaPickerVC *)picker{}
+
+//OR implement to handle after files selected and before save files to temp folder
+//-(void)popMediaPickerDidSelectedImageAssets:(NSMutableArray *)imageAssets picker:(POPMediaPickerVC *)picker{}
+
 
 - (void)didReceiveMemoryWarning
 {

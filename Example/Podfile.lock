@@ -1,0 +1,24 @@
+PODS:
+  - MBProgressHUD (0.9.2)
+  - POPLib (0.1.61):
+    - MBProgressHUD (~> 0.9)
+  - POPMediaPicker (0.1.0):
+    - MBProgressHUD (~> 0.9)
+    - POPLib (~> 0.1)
+    - POPOrientationNavigationVC (~> 0.1)
+  - POPOrientationNavigationVC (0.1.1)
+
+DEPENDENCIES:
+  - POPMediaPicker (from `../`)
+
+EXTERNAL SOURCES:
+  POPMediaPicker:
+    :path: ../
+
+SPEC CHECKSUMS:
+  MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
+  POPLib: bef50b9b1841df80fda2382690c87926143da17c
+  POPMediaPicker: d25808f60dc0d4b6ccc744c21bda376d5e8b42a4
+  POPOrientationNavigationVC: 7ef8b8eb22b39861ac2382ec56eefc59d1055153
+
+COCOAPODS: 0.39.0

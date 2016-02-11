@@ -1,0 +1,6 @@
+framework module Pods_POPMediaPicker_Tests {
+  umbrella header "Pods-POPMediaPicker_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}
