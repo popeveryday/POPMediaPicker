@@ -72,7 +72,7 @@ enum POPMediaPickerAlbum
 
 
 @interface POPMediaPickerVC : POPOrientationNavigationVC
-@property (nonatomic) id<POPMediaPickerDelegate> popMediaPickerDelegate;
+@property (nonatomic, weak) id<POPMediaPickerDelegate> popMediaPickerDelegate;
 @property (nonatomic) UIPopoverController* popoverContainer;
 @property (nonatomic, readonly) BOOL isViewAsPopoverController;
 
