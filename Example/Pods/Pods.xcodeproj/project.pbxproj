@@ -26,6 +26,11 @@
 		40C42F3F5DD94F29414FB7BF431221AC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02108B9436D154E938C5A654F32C6BDB /* CoreGraphics.framework */; };
 		45DC217EE0A9BEA85E042C77AF6AFC48 /* DateObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 037B190E80D256CEC82B79AAAB7F8915 /* DateObject.m */; };
 		476991B70F15F264A000379E42B6F943 /* DateObject.h in Headers */ = {isa = PBXBuildFile; fileRef = A657CD2F2F37EB842DC6177683EBE0C6 /* DateObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4E206F541C799E890099042A /* POPMediaPickerCapture@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E206F4E1C799C380099042A /* POPMediaPickerCapture@2x.png */; };
+		4E206F551C799E890099042A /* POPMediaPickerRecord@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E206F4F1C799C380099042A /* POPMediaPickerRecord@2x.png */; };
+		4E206F561C799E890099042A /* POPMediaPickerSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E206F501C799C380099042A /* POPMediaPickerSelected@2x.png */; };
+		4E206F571C799E890099042A /* POPMediaPickerSelectedIpad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E206F511C799C380099042A /* POPMediaPickerSelectedIpad@2x.png */; };
+		4E206F581C799E890099042A /* POPMediaPickerVideo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E206F521C799C380099042A /* POPMediaPickerVideo@2x.png */; };
 		4F10378630F57D79CD20B22F06C704A1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 621457440BADCDAC37BD141D19752AE9 /* Foundation.framework */; };
 		52150CAB69C69B2AB1E20571486A35F5 /* POPLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BD99707A39A34F9EF6EC7A4E0633F97 /* POPLib.framework */; };
 		7223F2D78A55A3B6DF2F4C9373E140BC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 621457440BADCDAC37BD141D19752AE9 /* Foundation.framework */; };
@@ -194,6 +199,11 @@
 		485468832877EE4C564478541445B0F0 /* Pods_POPMediaPicker_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_POPMediaPicker_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4868B492490C4D1815D30A3C7721BC7E /* NetLib.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NetLib.m; path = Pod/Classes/Common/NetLib.m; sourceTree = "<group>"; };
 		4A451E9BAE8279824D6BC300DA54F04C /* DateLib.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DateLib.h; path = Pod/Classes/Common/DateLib.h; sourceTree = "<group>"; };
+		4E206F4E1C799C380099042A /* POPMediaPickerCapture@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "POPMediaPickerCapture@2x.png"; sourceTree = "<group>"; };
+		4E206F4F1C799C380099042A /* POPMediaPickerRecord@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "POPMediaPickerRecord@2x.png"; sourceTree = "<group>"; };
+		4E206F501C799C380099042A /* POPMediaPickerSelected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "POPMediaPickerSelected@2x.png"; sourceTree = "<group>"; };
+		4E206F511C799C380099042A /* POPMediaPickerSelectedIpad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "POPMediaPickerSelectedIpad@2x.png"; sourceTree = "<group>"; };
+		4E206F521C799C380099042A /* POPMediaPickerVideo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "POPMediaPickerVideo@2x.png"; sourceTree = "<group>"; };
 		52CD516B6BF72759F2AB302EFBE33B71 /* POPLib.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = POPLib.xcconfig; sourceTree = "<group>"; };
 		5646A61C32FE376E05E1C303917851D1 /* StringLib.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = StringLib.m; path = Pod/Classes/Common/StringLib.m; sourceTree = "<group>"; };
 		5663F819ADFC4933F901DCA4154EE206 /* Pods-POPMediaPicker_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-POPMediaPicker_Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -410,6 +420,18 @@
 			path = "Example/Pods/Target Support Files/POPMediaPicker";
 			sourceTree = "<group>";
 		};
+		4E206F471C799B370099042A /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				4E206F4E1C799C380099042A /* POPMediaPickerCapture@2x.png */,
+				4E206F4F1C799C380099042A /* POPMediaPickerRecord@2x.png */,
+				4E206F501C799C380099042A /* POPMediaPickerSelected@2x.png */,
+				4E206F511C799C380099042A /* POPMediaPickerSelectedIpad@2x.png */,
+				4E206F521C799C380099042A /* POPMediaPickerVideo@2x.png */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		516CE222DDD484D45D728E743A520D31 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -527,6 +549,7 @@
 		CED363F15C6D3A67727F0077D8217A2F /* Pod */ = {
 			isa = PBXGroup;
 			children = (
+				4E206F471C799B370099042A /* Assets */,
 				1E9D00B074B7D006BABAF287379CB23B /* Classes */,
 			);
 			path = Pod;
@@ -751,6 +774,7 @@
 				9B7593C8B6716ADBD4F9D39228675D03 /* Sources */,
 				4B49280183E121BD999ECAEDF9BC5772 /* Frameworks */,
 				F152296F6479D1DFBE6EABEAE825D5A2 /* Headers */,
+				4E206F531C799E800099042A /* Resources */,
 			);
 			buildRules = (
 			);
@@ -794,6 +818,21 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4E206F531C799E800099042A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E206F541C799E890099042A /* POPMediaPickerCapture@2x.png in Resources */,
+				4E206F551C799E890099042A /* POPMediaPickerRecord@2x.png in Resources */,
+				4E206F561C799E890099042A /* POPMediaPickerSelected@2x.png in Resources */,
+				4E206F571C799E890099042A /* POPMediaPickerSelectedIpad@2x.png in Resources */,
+				4E206F581C799E890099042A /* POPMediaPickerVideo@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2DAFB06DF9D4B76E7F94DA2B8A63DD59 /* Sources */ = {

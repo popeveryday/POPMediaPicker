@@ -376,8 +376,8 @@
 
 
 
-#define imgNameCapture @"CommonLib.bundle/POPMediaPickerCapture"
-#define imgNameRecord @"CommonLib.bundle/POPMediaPickerRecord"
+#define imgNameCapture @"POPMediaPickerCapture"
+#define imgNameRecord @"POPMediaPickerRecord"
 
 @interface POPMediaPicker_AlbumDetailVC ()
 
@@ -666,7 +666,7 @@
     UILabel* videoTime;
     
     if ([cell viewWithTag:100] == nil) {
-        videoIcon = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"CommonLib.bundle/POPMediaPickerVideo"]];
+        videoIcon = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"POPMediaPickerVideo"]];
         videoIcon.tag = 100;
         videoIcon.frame = CGRectMake(0, 0, 60, 60);
         [cell addSubview:videoIcon];
@@ -685,7 +685,7 @@
     }
     
     if (!self.rootController.returnOnSelectSingleItem) {
-        cell.selectedBackgroundView = ImageViewWithImagename(!self.rootController.isViewAsPopoverController && GC_Device_IsIpad ? @"CommonLib.bundle/POPMediaPickerSelectedIpad" : @"CommonLib.bundle/POPMediaPickerSelected");
+        cell.selectedBackgroundView = ImageViewWithImagename(!self.rootController.isViewAsPopoverController && GC_Device_IsIpad ? @"POPMediaPickerSelectedIpad" : @"POPMediaPickerSelected");
     }
     
     videoIcon.hidden = YES;
