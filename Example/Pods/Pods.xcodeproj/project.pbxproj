@@ -18,22 +18,18 @@
 		1E7623B9420C3E71FAE3287C0CECA040 /* MBProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = 661437D7219FC262715D75AD14F8AD31 /* MBProgressHUD.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1F35B27D13806E96E2DE731492CEA48F /* NSDate+NVTimeAgo.h in Headers */ = {isa = PBXBuildFile; fileRef = E34030CF33BDDEE897423FD0227F0619 /* NSDate+NVTimeAgo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		27127313DECACCA84F893B51EAEB6CFC /* POPOrientationNavigationVC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2310157B0621C66B33FF70D57B1C5B35 /* POPOrientationNavigationVC.framework */; };
-		29D5F4B7137A7F33F5CF00E2917D7580 /* POPMediaPicker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D63C31C88083E4F5E24FFB2A415C682 /* POPMediaPicker-dummy.m */; };
 		2AD7546587FA528F459EFB66CE2C039B /* InAppPurchaseLib.h in Headers */ = {isa = PBXBuildFile; fileRef = 67DBAB9731BA09BB47D4B95DDF56261E /* InAppPurchaseLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2FB63570DA9F6C2AF2CE796D20915ED3 /* Pods-POPMediaPicker_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9484C419700DC23C1CF15B5EDA0AF78B /* Pods-POPMediaPicker_Tests-dummy.m */; };
 		31DD7393EFDC3190F14E6174A2A079C8 /* Pods-POPMediaPicker_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 431CF8DEEDBAAB5222A0E674B408FAFE /* Pods-POPMediaPicker_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3B802F207B7CD479C8208671F325B10A /* POPMediaPicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F9841C0448879CB0D4552BD345ACD4D /* POPMediaPicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		40C42F3F5DD94F29414FB7BF431221AC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02108B9436D154E938C5A654F32C6BDB /* CoreGraphics.framework */; };
 		45DC217EE0A9BEA85E042C77AF6AFC48 /* DateObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 037B190E80D256CEC82B79AAAB7F8915 /* DateObject.m */; };
 		476991B70F15F264A000379E42B6F943 /* DateObject.h in Headers */ = {isa = PBXBuildFile; fileRef = A657CD2F2F37EB842DC6177683EBE0C6 /* DateObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4E206F541C799E890099042A /* POPMediaPickerCapture@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E206F4E1C799C380099042A /* POPMediaPickerCapture@2x.png */; };
-		4E206F551C799E890099042A /* POPMediaPickerRecord@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E206F4F1C799C380099042A /* POPMediaPickerRecord@2x.png */; };
-		4E206F561C799E890099042A /* POPMediaPickerSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E206F501C799C380099042A /* POPMediaPickerSelected@2x.png */; };
-		4E206F571C799E890099042A /* POPMediaPickerSelectedIpad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E206F511C799C380099042A /* POPMediaPickerSelectedIpad@2x.png */; };
-		4E206F581C799E890099042A /* POPMediaPickerVideo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E206F521C799C380099042A /* POPMediaPickerVideo@2x.png */; };
+		4E206F611C79A0C20099042A /* POPMediaPicker.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4E206F601C79A09A0099042A /* POPMediaPicker.bundle */; };
 		4F10378630F57D79CD20B22F06C704A1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 621457440BADCDAC37BD141D19752AE9 /* Foundation.framework */; };
 		52150CAB69C69B2AB1E20571486A35F5 /* POPLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BD99707A39A34F9EF6EC7A4E0633F97 /* POPLib.framework */; };
+		59E085E0C43CE62E9BFDAB05DF807DB6 /* POPMediaPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B221A6B386E3FADEFBCA03BE23DE902 /* POPMediaPicker.m */; };
 		7223F2D78A55A3B6DF2F4C9373E140BC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 621457440BADCDAC37BD141D19752AE9 /* Foundation.framework */; };
+		7252140F0B3E92DB5B4CD6E6A8B4932A /* POPMediaPicker-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E19A9CDB97C7399ED22C69FDCA226E0 /* POPMediaPicker-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		76DA2F102C6197BACDB0D8B4DE630063 /* GameCenterLib2.h in Headers */ = {isa = PBXBuildFile; fileRef = E1616445CB14CA46CD3D8DF9629AEE88 /* GameCenterLib2.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		848F3117567C936854A088BF709A7F46 /* ALAssetsLibrary+CustomPhotoAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ECAD0531EB2FBAE567006ECD2384866 /* ALAssetsLibrary+CustomPhotoAlbum.m */; };
 		849FD5261047CB9B121EBE758B9E028B /* DateLib.m in Sources */ = {isa = PBXBuildFile; fileRef = 43910E28BF2AEAE665ADBB8ECFC7B144 /* DateLib.m */; };
@@ -48,7 +44,6 @@
 		9C6ABA166F35E9618D1FD088229E50DE /* NSDate+NVTimeAgo.m in Sources */ = {isa = PBXBuildFile; fileRef = 699D76CCE254DFB9BD39A6B2921C863D /* NSDate+NVTimeAgo.m */; };
 		9D88CB0C458DC77FB6259119FEE60D96 /* Reachability.h in Headers */ = {isa = PBXBuildFile; fileRef = 79497F7E413A819387076C38A4F2D47E /* Reachability.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9E17CC11959A1FE5566CE528047ACDC0 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0A936C3391E1DD37072272211BB3CE /* MBProgressHUD.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		A2954A788E06A7EF4C48D3EB697BD6C6 /* POPMediaPicker-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E13595219A5B1B9C3D131B6DE74F79BF /* POPMediaPicker-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A37EEB95B4F12D443079E201B50E780A /* InAppPurchaseLib.m in Sources */ = {isa = PBXBuildFile; fileRef = 021F4793E5147578253196CDE92B513A /* InAppPurchaseLib.m */; };
 		A3AF94E64CFD85B19FFBB657E2C75839 /* ViewLib.m in Sources */ = {isa = PBXBuildFile; fileRef = 853E23C828FE83BEC89B105A65C98ECE /* ViewLib.m */; };
 		A68ACE2792E85486172BD925C89D8714 /* POPOrientationNavigationVC-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E57E7591BEDFA7BED915C9DF637842B /* POPOrientationNavigationVC-dummy.m */; };
@@ -56,6 +51,7 @@
 		AC03DF031E68467E30339D770F033CF5 /* GameCenterLib2.m in Sources */ = {isa = PBXBuildFile; fileRef = 67D875C96ED1DA4CF3C3252CAFE32AA5 /* GameCenterLib2.m */; };
 		B08EF56EBC3B410852165A54446A77A8 /* POPOrientationNavigationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F322723B084C30F8A041759CFECEF /* POPOrientationNavigationVC.m */; };
 		B3C66774C7E82CDCB52ED1E936435780 /* POPLib-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D9938CC21090D30BDA865566991D9D3 /* POPLib-dummy.m */; };
+		B3D59D47B7E61B64DFA6D102757D1861 /* POPMediaPicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 16BE83C7DA5A9E889C5E6682FB6C6711 /* POPMediaPicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B7A080CB9E0C46777DAA03CA414EDE3E /* NetLib.h in Headers */ = {isa = PBXBuildFile; fileRef = 418BF77CA44039BF9AB6A76A5107D242 /* NetLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BB010EE04BA829E196554A00A951AA7C /* MBProgressHUD-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C26ED038448AA204671689D6636C42 /* MBProgressHUD-dummy.m */; };
 		BDB5C7C28A1A9E49C6DDB8D9D9357D9A /* POPOrientationNavigationVC-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A5D934CF26209F2BCE2570956799A3F2 /* POPOrientationNavigationVC-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -70,10 +66,10 @@
 		D63CCFC6E52AF6C2C3A8E6D4418B7988 /* Pods-POPMediaPicker_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B7FFBBC2B117F152FB0AA7B67E9F4B6 /* Pods-POPMediaPicker_Example-dummy.m */; };
 		D6EE142190A8C03629031F2A3B682F41 /* POPOrientationNavigationVC.h in Headers */ = {isa = PBXBuildFile; fileRef = CD22524513422CC8B700251894259281 /* POPOrientationNavigationVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D7161EA0FF1D99905FA1EE9C475ABE22 /* FileLib.h in Headers */ = {isa = PBXBuildFile; fileRef = 187A00A93F251F15EB353B14A27B2D64 /* FileLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DC90A555AF846D6A2875ABD3EEA2C870 /* POPMediaPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 20AA5C793A25A9B4BE1E0EA09A8A6C2F /* POPMediaPicker.m */; };
 		DD7572BADEF6DD8589FBB56B08AE8DC3 /* Hashtable.m in Sources */ = {isa = PBXBuildFile; fileRef = EA986FE63038CA1AB428CBF28C0E9730 /* Hashtable.m */; };
 		DDA8F60A0F7C182EF7F3A0337E92B74B /* Hashtable.h in Headers */ = {isa = PBXBuildFile; fileRef = A11624D764963BC1C00FC2A34FB74C5B /* Hashtable.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E9BC56E8FF6D565C43DB3E4D6BF448E6 /* POPLib.h in Headers */ = {isa = PBXBuildFile; fileRef = 00BD01C7B0D444AD6A0F7AE9B1B50A39 /* POPLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F2BEF02568202521DFC4822DFDF8B8E6 /* POPMediaPicker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E53134FC59801E89C4BAFC01CFF9954 /* POPMediaPicker-dummy.m */; };
 		F47ACFAE4B6F24FD4F124042E6468C27 /* CoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = F8060B77F32BEB4183F6C694DD12E535 /* CoreData.m */; };
 		FA609317CE383DE243571F8FE3F9542F /* CommonLib.m in Sources */ = {isa = PBXBuildFile; fileRef = 43C8EF50B10F06644FE5049EA701E26B /* CommonLib.m */; };
 		FC6DA308801A94AC52E75F7F7BEA968A /* ReturnSet.m in Sources */ = {isa = PBXBuildFile; fileRef = EA30342023AD4B3ADC9A5044EBE8C367 /* ReturnSet.m */; };
@@ -179,15 +175,16 @@
 		0DCD229803F21D1E26C81A1A2D11B3D2 /* CoreData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CoreData.h; path = Pod/Classes/Common/CoreData.h; sourceTree = "<group>"; };
 		12C26ED038448AA204671689D6636C42 /* MBProgressHUD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD-dummy.m"; sourceTree = "<group>"; };
 		167CA6C1574C9B9FBE2877BF49AE4B68 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		16BE83C7DA5A9E889C5E6682FB6C6711 /* POPMediaPicker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = POPMediaPicker.h; sourceTree = "<group>"; };
 		187A00A93F251F15EB353B14A27B2D64 /* FileLib.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FileLib.h; path = Pod/Classes/Common/FileLib.h; sourceTree = "<group>"; };
 		1B058F821355ECB9B160F89608641155 /* MBProgressHUD.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MBProgressHUD.xcconfig; sourceTree = "<group>"; };
 		1C30D80A7FF813551155D12F805B0DF2 /* Pods-POPMediaPicker_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-POPMediaPicker_Tests-umbrella.h"; sourceTree = "<group>"; };
 		1E8BD74C05EF96916E406C0C32B3D81C /* ImageLib.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ImageLib.h; path = Pod/Classes/Common/ImageLib.h; sourceTree = "<group>"; };
-		20AA5C793A25A9B4BE1E0EA09A8A6C2F /* POPMediaPicker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = POPMediaPicker.m; sourceTree = "<group>"; };
 		2310157B0621C66B33FF70D57B1C5B35 /* POPOrientationNavigationVC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = POPOrientationNavigationVC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		24157BF793D1567A2E17360187E4E659 /* Pods-POPMediaPicker_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-POPMediaPicker_Tests.modulemap"; sourceTree = "<group>"; };
 		26D0878CF0EA01589C42169CF33249F5 /* POPLib-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "POPLib-prefix.pch"; sourceTree = "<group>"; };
 		2ECAD0531EB2FBAE567006ECD2384866 /* ALAssetsLibrary+CustomPhotoAlbum.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "ALAssetsLibrary+CustomPhotoAlbum.m"; path = "Pod/Classes/Extend/ALAssetsLibrary+CustomPhotoAlbum.m"; sourceTree = "<group>"; };
+		3B3141144FF3849E7069A8DB82D3B921 /* POPMediaPicker.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = POPMediaPicker.xcconfig; sourceTree = "<group>"; };
 		3C9F322723B084C30F8A041759CFECEF /* POPOrientationNavigationVC.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = POPOrientationNavigationVC.m; path = Pod/Classes/POPOrientationNavigationVC.m; sourceTree = "<group>"; };
 		3E57E7591BEDFA7BED915C9DF637842B /* POPOrientationNavigationVC-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "POPOrientationNavigationVC-dummy.m"; sourceTree = "<group>"; };
 		3ECE9A1B1BFE995D4D7C21D954D20E28 /* Pods-POPMediaPicker_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-POPMediaPicker_Tests-resources.sh"; sourceTree = "<group>"; };
@@ -195,15 +192,11 @@
 		431CF8DEEDBAAB5222A0E674B408FAFE /* Pods-POPMediaPicker_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-POPMediaPicker_Example-umbrella.h"; sourceTree = "<group>"; };
 		43910E28BF2AEAE665ADBB8ECFC7B144 /* DateLib.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DateLib.m; path = Pod/Classes/Common/DateLib.m; sourceTree = "<group>"; };
 		43C8EF50B10F06644FE5049EA701E26B /* CommonLib.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CommonLib.m; path = Pod/Classes/Common/CommonLib.m; sourceTree = "<group>"; };
-		45EDB6A0A9A89F6BFFF8CADB130D59BA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		485468832877EE4C564478541445B0F0 /* Pods_POPMediaPicker_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_POPMediaPicker_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4868B492490C4D1815D30A3C7721BC7E /* NetLib.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NetLib.m; path = Pod/Classes/Common/NetLib.m; sourceTree = "<group>"; };
 		4A451E9BAE8279824D6BC300DA54F04C /* DateLib.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DateLib.h; path = Pod/Classes/Common/DateLib.h; sourceTree = "<group>"; };
-		4E206F4E1C799C380099042A /* POPMediaPickerCapture@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "POPMediaPickerCapture@2x.png"; sourceTree = "<group>"; };
-		4E206F4F1C799C380099042A /* POPMediaPickerRecord@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "POPMediaPickerRecord@2x.png"; sourceTree = "<group>"; };
-		4E206F501C799C380099042A /* POPMediaPickerSelected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "POPMediaPickerSelected@2x.png"; sourceTree = "<group>"; };
-		4E206F511C799C380099042A /* POPMediaPickerSelectedIpad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "POPMediaPickerSelectedIpad@2x.png"; sourceTree = "<group>"; };
-		4E206F521C799C380099042A /* POPMediaPickerVideo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "POPMediaPickerVideo@2x.png"; sourceTree = "<group>"; };
+		4B221A6B386E3FADEFBCA03BE23DE902 /* POPMediaPicker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = POPMediaPicker.m; sourceTree = "<group>"; };
+		4E206F601C79A09A0099042A /* POPMediaPicker.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = POPMediaPicker.bundle; sourceTree = "<group>"; };
 		52CD516B6BF72759F2AB302EFBE33B71 /* POPLib.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = POPLib.xcconfig; sourceTree = "<group>"; };
 		5646A61C32FE376E05E1C303917851D1 /* StringLib.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = StringLib.m; path = Pod/Classes/Common/StringLib.m; sourceTree = "<group>"; };
 		5663F819ADFC4933F901DCA4154EE206 /* Pods-POPMediaPicker_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-POPMediaPicker_Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -213,7 +206,6 @@
 		605EC6586F347E8B04E96567A4E63176 /* GlobalConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GlobalConfig.h; path = Pod/Classes/GlobalConfig.h; sourceTree = "<group>"; };
 		621457440BADCDAC37BD141D19752AE9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		63D1923E9B8327F8BFA749D3E4EF8F7A /* Pods-POPMediaPicker_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-POPMediaPicker_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		6556AD6DEBD91B2CCB3BFD0356F524E9 /* POPMediaPicker.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = POPMediaPicker.modulemap; sourceTree = "<group>"; };
 		660049BD9389AA38CB86A2744695D678 /* POPOrientationNavigationVC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = POPOrientationNavigationVC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		661437D7219FC262715D75AD14F8AD31 /* MBProgressHUD.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		679BDE2DF8D30E93D2ECAFF86D72EA1B /* MBProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MBProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -223,12 +215,13 @@
 		6B08AF9D33D5780514F7DB1706FEB94E /* Pods-POPMediaPicker_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-POPMediaPicker_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		70CD7202838C20A009F247AD078104B2 /* ReturnSet.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ReturnSet.h; path = Pod/Classes/Custom/ReturnSet.h; sourceTree = "<group>"; };
 		71268A69A1C210BB975BFE51C5FB47E4 /* Reachability.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = Pod/Classes/Custom/Reachability.m; sourceTree = "<group>"; };
+		752708E989AC4642B9CD6FC3232794F1 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7755D35A6070DC7E0BD58577A8AE5C80 /* POPLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = POPLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7930359AB24A1F24D8BF5B5CABA7D780 /* ObserverObject.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ObserverObject.m; path = Pod/Classes/Custom/ObserverObject.m; sourceTree = "<group>"; };
 		79497F7E413A819387076C38A4F2D47E /* Reachability.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = Pod/Classes/Custom/Reachability.h; sourceTree = "<group>"; };
+		799BA7388A8471268AC78C6446684A26 /* POPMediaPicker-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "POPMediaPicker-prefix.pch"; sourceTree = "<group>"; };
 		7B7FFBBC2B117F152FB0AA7B67E9F4B6 /* Pods-POPMediaPicker_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-POPMediaPicker_Example-dummy.m"; sourceTree = "<group>"; };
-		7D63C31C88083E4F5E24FFB2A415C682 /* POPMediaPicker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "POPMediaPicker-dummy.m"; sourceTree = "<group>"; };
-		7F9841C0448879CB0D4552BD345ACD4D /* POPMediaPicker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = POPMediaPicker.h; sourceTree = "<group>"; };
+		7F6B827CFF9942514ACA3DD7972D7DCB /* POPMediaPickerSelected@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "POPMediaPickerSelected@2x.png"; sourceTree = "<group>"; };
 		7FCEA72CA077933705EC6AF2D2696939 /* StringLib.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = StringLib.h; path = Pod/Classes/Common/StringLib.h; sourceTree = "<group>"; };
 		853E23C828FE83BEC89B105A65C98ECE /* ViewLib.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ViewLib.m; path = Pod/Classes/Common/ViewLib.m; sourceTree = "<group>"; };
 		8736F4E0F0E73BD4D21508F9EDCB10C6 /* MBProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MBProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -237,11 +230,16 @@
 		88D26AC69C7A004D6F8C6A6B32457D9E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8BD99707A39A34F9EF6EC7A4E0633F97 /* POPLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = POPLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C70D63AF97158ADA4EE7D0EFFD99184 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E19A9CDB97C7399ED22C69FDCA226E0 /* POPMediaPicker-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "POPMediaPicker-umbrella.h"; sourceTree = "<group>"; };
+		8E53134FC59801E89C4BAFC01CFF9954 /* POPMediaPicker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "POPMediaPicker-dummy.m"; sourceTree = "<group>"; };
 		8F343A4565DE4752A834D177F7D3A442 /* Pods-POPMediaPicker_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-POPMediaPicker_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		9484C419700DC23C1CF15B5EDA0AF78B /* Pods-POPMediaPicker_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-POPMediaPicker_Tests-dummy.m"; sourceTree = "<group>"; };
-		98734BBE78438EA450492633C09B0FB9 /* POPMediaPicker.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = POPMediaPicker.xcconfig; sourceTree = "<group>"; };
+		9BC1693D17544056A88787E79CC80BDD /* POPMediaPickerRecord@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "POPMediaPickerRecord@2x.png"; sourceTree = "<group>"; };
+		9C1FC3638BB1881F91754AD945872A3C /* POPMediaPickerCapture@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "POPMediaPickerCapture@2x.png"; sourceTree = "<group>"; };
 		A11624D764963BC1C00FC2A34FB74C5B /* Hashtable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Hashtable.h; path = Pod/Classes/Custom/Hashtable.h; sourceTree = "<group>"; };
+		A15CB08DA8C388CB58629B4890D69EED /* POPMediaPickerVideo@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "POPMediaPickerVideo@2x.png"; sourceTree = "<group>"; };
 		A2D6B31B104913B524FD0CB3B34F47FA /* Pods-POPMediaPicker_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-POPMediaPicker_Example-resources.sh"; sourceTree = "<group>"; };
+		A481868933B85DB0B78AF52F3BB83DE8 /* POPMediaPickerSelectedIpad@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "POPMediaPickerSelectedIpad@2x.png"; sourceTree = "<group>"; };
 		A4EEECFE4DFCD5EE1ABE7A7B0E2CE080 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A527016B2594A2AF9C6289EB7397EB15 /* Pods_POPMediaPicker_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_POPMediaPicker_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5D934CF26209F2BCE2570956799A3F2 /* POPOrientationNavigationVC-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "POPOrientationNavigationVC-umbrella.h"; sourceTree = "<group>"; };
@@ -254,12 +252,10 @@
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BE9B744DF32BD096AB0761035A37A3AD /* Pods-POPMediaPicker_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-POPMediaPicker_Example-frameworks.sh"; sourceTree = "<group>"; };
 		CD22524513422CC8B700251894259281 /* POPOrientationNavigationVC.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = POPOrientationNavigationVC.h; path = Pod/Classes/POPOrientationNavigationVC.h; sourceTree = "<group>"; };
-		CE59BF414D9809915F9FAAE967A145DC /* POPMediaPicker-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "POPMediaPicker-prefix.pch"; sourceTree = "<group>"; };
 		CF67D9440C46631B0868A5582C8440A1 /* Pods-POPMediaPicker_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-POPMediaPicker_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		CFA20F059F83E96A2C629975541A31AA /* Pods-POPMediaPicker_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-POPMediaPicker_Example.modulemap"; sourceTree = "<group>"; };
 		DA5BCF75F5CD45F44DD60281B3E06999 /* ALAssetsLibrary+CustomPhotoAlbum.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ALAssetsLibrary+CustomPhotoAlbum.h"; path = "Pod/Classes/Extend/ALAssetsLibrary+CustomPhotoAlbum.h"; sourceTree = "<group>"; };
 		DD025BF524756677F0B45086CEE80548 /* CommonLib.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CommonLib.h; path = Pod/Classes/Common/CommonLib.h; sourceTree = "<group>"; };
-		E13595219A5B1B9C3D131B6DE74F79BF /* POPMediaPicker-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "POPMediaPicker-umbrella.h"; sourceTree = "<group>"; };
 		E1616445CB14CA46CD3D8DF9629AEE88 /* GameCenterLib2.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GameCenterLib2.h; path = Pod/Classes/Common/GameCenterLib2.h; sourceTree = "<group>"; };
 		E34030CF33BDDEE897423FD0227F0619 /* NSDate+NVTimeAgo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDate+NVTimeAgo.h"; path = "Pod/Classes/Extend/NSDate+NVTimeAgo.h"; sourceTree = "<group>"; };
 		E5CD853799A78ED67CF6C2AF8B73165A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -270,6 +266,7 @@
 		EA986FE63038CA1AB428CBF28C0E9730 /* Hashtable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Hashtable.m; path = Pod/Classes/Custom/Hashtable.m; sourceTree = "<group>"; };
 		F2340748088C6E6B5D2FC836067C847E /* MBProgressHUD.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = MBProgressHUD.modulemap; sourceTree = "<group>"; };
 		F8060B77F32BEB4183F6C694DD12E535 /* CoreData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CoreData.m; path = Pod/Classes/Common/CoreData.m; sourceTree = "<group>"; };
+		FC30E3751230763A5D8E346EA0508F03 /* POPMediaPicker.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = POPMediaPicker.modulemap; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -343,6 +340,20 @@
 			path = "../Target Support Files/MBProgressHUD";
 			sourceTree = "<group>";
 		};
+		13588697084727B468B75330FA2C95AE /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				752708E989AC4642B9CD6FC3232794F1 /* Info.plist */,
+				FC30E3751230763A5D8E346EA0508F03 /* POPMediaPicker.modulemap */,
+				3B3141144FF3849E7069A8DB82D3B921 /* POPMediaPicker.xcconfig */,
+				8E53134FC59801E89C4BAFC01CFF9954 /* POPMediaPicker-dummy.m */,
+				799BA7388A8471268AC78C6446684A26 /* POPMediaPicker-prefix.pch */,
+				8E19A9CDB97C7399ED22C69FDCA226E0 /* POPMediaPicker-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/POPMediaPicker";
+			sourceTree = "<group>";
+		};
 		188178FD2543DB0D29181433B7E8ADDA /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -350,15 +361,6 @@
 				1EB569F78609728B86E18300C4BB16A2 /* Pods-POPMediaPicker_Tests */,
 			);
 			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		1E9D00B074B7D006BABAF287379CB23B /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				7F9841C0448879CB0D4552BD345ACD4D /* POPMediaPicker.h */,
-				20AA5C793A25A9B4BE1E0EA09A8A6C2F /* POPMediaPicker.m */,
-			);
-			path = Classes;
 			sourceTree = "<group>";
 		};
 		1EB569F78609728B86E18300C4BB16A2 /* Pods-POPMediaPicker_Tests */ = {
@@ -393,6 +395,17 @@
 			path = "../Target Support Files/POPOrientationNavigationVC";
 			sourceTree = "<group>";
 		};
+		3EB4D6F1ABF30D88CB797E4C048E8703 /* POPMediaPicker */ = {
+			isa = PBXGroup;
+			children = (
+				CE34F89014DE91F1C4BC33CADC636FC7 /* Pod */,
+				58F4200132937E89EBA990A1344C754D /* Resources */,
+				13588697084727B468B75330FA2C95AE /* Support Files */,
+			);
+			name = POPMediaPicker;
+			path = ../..;
+			sourceTree = "<group>";
+		};
 		415F8F33E4AE8A1B41F9D5D0BE6B5CD5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -406,28 +419,22 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4A12C56D63771DC36846E25544C61FC3 /* Support Files */ = {
+		45B84520E83C39CE9DE685DB35E33C8E /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				45EDB6A0A9A89F6BFFF8CADB130D59BA /* Info.plist */,
-				6556AD6DEBD91B2CCB3BFD0356F524E9 /* POPMediaPicker.modulemap */,
-				98734BBE78438EA450492633C09B0FB9 /* POPMediaPicker.xcconfig */,
-				7D63C31C88083E4F5E24FFB2A415C682 /* POPMediaPicker-dummy.m */,
-				CE59BF414D9809915F9FAAE967A145DC /* POPMediaPicker-prefix.pch */,
-				E13595219A5B1B9C3D131B6DE74F79BF /* POPMediaPicker-umbrella.h */,
+				9C1FC3638BB1881F91754AD945872A3C /* POPMediaPickerCapture@2x.png */,
+				9BC1693D17544056A88787E79CC80BDD /* POPMediaPickerRecord@2x.png */,
+				7F6B827CFF9942514ACA3DD7972D7DCB /* POPMediaPickerSelected@2x.png */,
+				A481868933B85DB0B78AF52F3BB83DE8 /* POPMediaPickerSelectedIpad@2x.png */,
+				A15CB08DA8C388CB58629B4890D69EED /* POPMediaPickerVideo@2x.png */,
 			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/POPMediaPicker";
+			path = Assets;
 			sourceTree = "<group>";
 		};
-		4E206F471C799B370099042A /* Assets */ = {
+		4E206F591C79A07D0099042A /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				4E206F4E1C799C380099042A /* POPMediaPickerCapture@2x.png */,
-				4E206F4F1C799C380099042A /* POPMediaPickerRecord@2x.png */,
-				4E206F501C799C380099042A /* POPMediaPickerSelected@2x.png */,
-				4E206F511C799C380099042A /* POPMediaPickerSelectedIpad@2x.png */,
-				4E206F521C799C380099042A /* POPMediaPickerVideo@2x.png */,
+				4E206F601C79A09A0099042A /* POPMediaPicker.bundle */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -443,6 +450,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		58F4200132937E89EBA990A1344C754D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CA7873C721AAE2ABE6AE4701F4CAA924 /* Pod */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		5B6CDEDD07BF52734870CCE392257A3D /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -450,6 +465,14 @@
 				621457440BADCDAC37BD141D19752AE9 /* Foundation.framework */,
 			);
 			name = iOS;
+			sourceTree = "<group>";
+		};
+		5F242EF9BD3FA7928B8DFA36F968B307 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3EB4D6F1ABF30D88CB797E4C048E8703 /* POPMediaPicker */,
+			);
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 		77F5F54433909DC095EBAEAC62700E0B /* Pods-POPMediaPicker_Example */ = {
@@ -474,12 +497,21 @@
 			isa = PBXGroup;
 			children = (
 				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
-				D63AC471AAE55DDE17ADB5051E705010 /* Development Pods */,
+				5F242EF9BD3FA7928B8DFA36F968B307 /* Development Pods */,
 				516CE222DDD484D45D728E743A520D31 /* Frameworks */,
 				DD39A8CFC193D772CF887CA7C6E86ED0 /* Pods */,
 				415F8F33E4AE8A1B41F9D5D0BE6B5CD5 /* Products */,
 				188178FD2543DB0D29181433B7E8ADDA /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		8BDEF819ED1D2F2236CCE332F74757CE /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				16BE83C7DA5A9E889C5E6682FB6C6711 /* POPMediaPicker.h */,
+				4B221A6B386E3FADEFBCA03BE23DE902 /* POPMediaPicker.m */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		AE0F0DFB69C640A79B0E88F30A0E1FEF /* POPOrientationNavigationVC */ = {
@@ -546,11 +578,19 @@
 			path = POPLib;
 			sourceTree = "<group>";
 		};
-		CED363F15C6D3A67727F0077D8217A2F /* Pod */ = {
+		CA7873C721AAE2ABE6AE4701F4CAA924 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				4E206F471C799B370099042A /* Assets */,
-				1E9D00B074B7D006BABAF287379CB23B /* Classes */,
+				45B84520E83C39CE9DE685DB35E33C8E /* Assets */,
+			);
+			path = Pod;
+			sourceTree = "<group>";
+		};
+		CE34F89014DE91F1C4BC33CADC636FC7 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				4E206F591C79A07D0099042A /* Assets */,
+				8BDEF819ED1D2F2236CCE332F74757CE /* Classes */,
 			);
 			path = Pod;
 			sourceTree = "<group>";
@@ -569,14 +609,6 @@
 			path = "../Target Support Files/POPLib";
 			sourceTree = "<group>";
 		};
-		D63AC471AAE55DDE17ADB5051E705010 /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				E8D3B0B9B7687EF3C5E2FD7D4AA76643 /* POPMediaPicker */,
-			);
-			name = "Development Pods";
-			sourceTree = "<group>";
-		};
 		DD39A8CFC193D772CF887CA7C6E86ED0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -585,16 +617,6 @@
 				AE0F0DFB69C640A79B0E88F30A0E1FEF /* POPOrientationNavigationVC */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		E8D3B0B9B7687EF3C5E2FD7D4AA76643 /* POPMediaPicker */ = {
-			isa = PBXGroup;
-			children = (
-				CED363F15C6D3A67727F0077D8217A2F /* Pod */,
-				4A12C56D63771DC36846E25544C61FC3 /* Support Files */,
-			);
-			name = POPMediaPicker;
-			path = ../..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -652,12 +674,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F152296F6479D1DFBE6EABEAE825D5A2 /* Headers */ = {
+		C1D66406EE8B7F8002F0F25A792BC4EE /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B802F207B7CD479C8208671F325B10A /* POPMediaPicker.h in Headers */,
-				A2954A788E06A7EF4C48D3EB697BD6C6 /* POPMediaPicker-umbrella.h in Headers */,
+				7252140F0B3E92DB5B4CD6E6A8B4932A /* POPMediaPicker-umbrella.h in Headers */,
+				B3D59D47B7E61B64DFA6D102757D1861 /* POPMediaPicker.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -771,10 +793,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5715DC0B850C7405D833C7241C20FC28 /* Build configuration list for PBXNativeTarget "POPMediaPicker" */;
 			buildPhases = (
-				9B7593C8B6716ADBD4F9D39228675D03 /* Sources */,
+				8A4681E39D6F0BFBF4B88ADCDE76EBD8 /* Sources */,
 				4B49280183E121BD999ECAEDF9BC5772 /* Frameworks */,
-				F152296F6479D1DFBE6EABEAE825D5A2 /* Headers */,
-				4E206F531C799E800099042A /* Resources */,
+				C1D66406EE8B7F8002F0F25A792BC4EE /* Headers */,
+				D9DD60B5F89D3CEC0AFBC2640F295688 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -820,15 +842,11 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		4E206F531C799E800099042A /* Resources */ = {
+		D9DD60B5F89D3CEC0AFBC2640F295688 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E206F541C799E890099042A /* POPMediaPickerCapture@2x.png in Resources */,
-				4E206F551C799E890099042A /* POPMediaPickerRecord@2x.png in Resources */,
-				4E206F561C799E890099042A /* POPMediaPickerSelected@2x.png in Resources */,
-				4E206F571C799E890099042A /* POPMediaPickerSelectedIpad@2x.png in Resources */,
-				4E206F581C799E890099042A /* POPMediaPickerVideo@2x.png in Resources */,
+				4E206F611C79A0C20099042A /* POPMediaPicker.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -886,12 +904,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9B7593C8B6716ADBD4F9D39228675D03 /* Sources */ = {
+		8A4681E39D6F0BFBF4B88ADCDE76EBD8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC90A555AF846D6A2875ABD3EEA2C870 /* POPMediaPicker.m in Sources */,
-				29D5F4B7137A7F33F5CF00E2917D7580 /* POPMediaPicker-dummy.m in Sources */,
+				F2BEF02568202521DFC4822DFDF8B8E6 /* POPMediaPicker-dummy.m in Sources */,
+				59E085E0C43CE62E9BFDAB05DF807DB6 /* POPMediaPicker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1311,7 +1329,7 @@
 		};
 		CC3236450E133E623F5DDD0A3449631E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 98734BBE78438EA450492633C09B0FB9 /* POPMediaPicker.xcconfig */;
+			baseConfigurationReference = 3B3141144FF3849E7069A8DB82D3B921 /* POPMediaPicker.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1338,7 +1356,7 @@
 		};
 		DE2D1932D51FA42893DB22E6C2F34CA5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 98734BBE78438EA450492633C09B0FB9 /* POPMediaPicker.xcconfig */;
+			baseConfigurationReference = 3B3141144FF3849E7069A8DB82D3B921 /* POPMediaPicker.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
