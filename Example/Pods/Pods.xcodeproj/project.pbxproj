@@ -24,7 +24,7 @@
 		40C42F3F5DD94F29414FB7BF431221AC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02108B9436D154E938C5A654F32C6BDB /* CoreGraphics.framework */; };
 		45DC217EE0A9BEA85E042C77AF6AFC48 /* DateObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 037B190E80D256CEC82B79AAAB7F8915 /* DateObject.m */; };
 		476991B70F15F264A000379E42B6F943 /* DateObject.h in Headers */ = {isa = PBXBuildFile; fileRef = A657CD2F2F37EB842DC6177683EBE0C6 /* DateObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4E206F611C79A0C20099042A /* POPMediaPicker.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4E206F601C79A09A0099042A /* POPMediaPicker.bundle */; };
+		4E206F631C79A3C30099042A /* POPMediaPicker.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4E206F621C79A3C30099042A /* POPMediaPicker.bundle */; };
 		4F10378630F57D79CD20B22F06C704A1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 621457440BADCDAC37BD141D19752AE9 /* Foundation.framework */; };
 		52150CAB69C69B2AB1E20571486A35F5 /* POPLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BD99707A39A34F9EF6EC7A4E0633F97 /* POPLib.framework */; };
 		59E085E0C43CE62E9BFDAB05DF807DB6 /* POPMediaPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B221A6B386E3FADEFBCA03BE23DE902 /* POPMediaPicker.m */; };
@@ -196,7 +196,7 @@
 		4868B492490C4D1815D30A3C7721BC7E /* NetLib.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NetLib.m; path = Pod/Classes/Common/NetLib.m; sourceTree = "<group>"; };
 		4A451E9BAE8279824D6BC300DA54F04C /* DateLib.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DateLib.h; path = Pod/Classes/Common/DateLib.h; sourceTree = "<group>"; };
 		4B221A6B386E3FADEFBCA03BE23DE902 /* POPMediaPicker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = POPMediaPicker.m; sourceTree = "<group>"; };
-		4E206F601C79A09A0099042A /* POPMediaPicker.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = POPMediaPicker.bundle; sourceTree = "<group>"; };
+		4E206F621C79A3C30099042A /* POPMediaPicker.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = POPMediaPicker.bundle; sourceTree = "<group>"; };
 		52CD516B6BF72759F2AB302EFBE33B71 /* POPLib.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = POPLib.xcconfig; sourceTree = "<group>"; };
 		5646A61C32FE376E05E1C303917851D1 /* StringLib.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = StringLib.m; path = Pod/Classes/Common/StringLib.m; sourceTree = "<group>"; };
 		5663F819ADFC4933F901DCA4154EE206 /* Pods-POPMediaPicker_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-POPMediaPicker_Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -221,7 +221,6 @@
 		79497F7E413A819387076C38A4F2D47E /* Reachability.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = Pod/Classes/Custom/Reachability.h; sourceTree = "<group>"; };
 		799BA7388A8471268AC78C6446684A26 /* POPMediaPicker-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "POPMediaPicker-prefix.pch"; sourceTree = "<group>"; };
 		7B7FFBBC2B117F152FB0AA7B67E9F4B6 /* Pods-POPMediaPicker_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-POPMediaPicker_Example-dummy.m"; sourceTree = "<group>"; };
-		7F6B827CFF9942514ACA3DD7972D7DCB /* POPMediaPickerSelected@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "POPMediaPickerSelected@2x.png"; sourceTree = "<group>"; };
 		7FCEA72CA077933705EC6AF2D2696939 /* StringLib.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = StringLib.h; path = Pod/Classes/Common/StringLib.h; sourceTree = "<group>"; };
 		853E23C828FE83BEC89B105A65C98ECE /* ViewLib.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ViewLib.m; path = Pod/Classes/Common/ViewLib.m; sourceTree = "<group>"; };
 		8736F4E0F0E73BD4D21508F9EDCB10C6 /* MBProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MBProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -234,12 +233,8 @@
 		8E53134FC59801E89C4BAFC01CFF9954 /* POPMediaPicker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "POPMediaPicker-dummy.m"; sourceTree = "<group>"; };
 		8F343A4565DE4752A834D177F7D3A442 /* Pods-POPMediaPicker_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-POPMediaPicker_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		9484C419700DC23C1CF15B5EDA0AF78B /* Pods-POPMediaPicker_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-POPMediaPicker_Tests-dummy.m"; sourceTree = "<group>"; };
-		9BC1693D17544056A88787E79CC80BDD /* POPMediaPickerRecord@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "POPMediaPickerRecord@2x.png"; sourceTree = "<group>"; };
-		9C1FC3638BB1881F91754AD945872A3C /* POPMediaPickerCapture@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "POPMediaPickerCapture@2x.png"; sourceTree = "<group>"; };
 		A11624D764963BC1C00FC2A34FB74C5B /* Hashtable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Hashtable.h; path = Pod/Classes/Custom/Hashtable.h; sourceTree = "<group>"; };
-		A15CB08DA8C388CB58629B4890D69EED /* POPMediaPickerVideo@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "POPMediaPickerVideo@2x.png"; sourceTree = "<group>"; };
 		A2D6B31B104913B524FD0CB3B34F47FA /* Pods-POPMediaPicker_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-POPMediaPicker_Example-resources.sh"; sourceTree = "<group>"; };
-		A481868933B85DB0B78AF52F3BB83DE8 /* POPMediaPickerSelectedIpad@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "POPMediaPickerSelectedIpad@2x.png"; sourceTree = "<group>"; };
 		A4EEECFE4DFCD5EE1ABE7A7B0E2CE080 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A527016B2594A2AF9C6289EB7397EB15 /* Pods_POPMediaPicker_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_POPMediaPicker_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5D934CF26209F2BCE2570956799A3F2 /* POPOrientationNavigationVC-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "POPOrientationNavigationVC-umbrella.h"; sourceTree = "<group>"; };
@@ -399,7 +394,6 @@
 			isa = PBXGroup;
 			children = (
 				CE34F89014DE91F1C4BC33CADC636FC7 /* Pod */,
-				58F4200132937E89EBA990A1344C754D /* Resources */,
 				13588697084727B468B75330FA2C95AE /* Support Files */,
 			);
 			name = POPMediaPicker;
@@ -419,26 +413,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		45B84520E83C39CE9DE685DB35E33C8E /* Assets */ = {
-			isa = PBXGroup;
-			children = (
-				9C1FC3638BB1881F91754AD945872A3C /* POPMediaPickerCapture@2x.png */,
-				9BC1693D17544056A88787E79CC80BDD /* POPMediaPickerRecord@2x.png */,
-				7F6B827CFF9942514ACA3DD7972D7DCB /* POPMediaPickerSelected@2x.png */,
-				A481868933B85DB0B78AF52F3BB83DE8 /* POPMediaPickerSelectedIpad@2x.png */,
-				A15CB08DA8C388CB58629B4890D69EED /* POPMediaPickerVideo@2x.png */,
-			);
-			path = Assets;
-			sourceTree = "<group>";
-		};
-		4E206F591C79A07D0099042A /* Assets */ = {
-			isa = PBXGroup;
-			children = (
-				4E206F601C79A09A0099042A /* POPMediaPicker.bundle */,
-			);
-			path = Assets;
-			sourceTree = "<group>";
-		};
 		516CE222DDD484D45D728E743A520D31 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -448,14 +422,6 @@
 				5B6CDEDD07BF52734870CCE392257A3D /* iOS */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		58F4200132937E89EBA990A1344C754D /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				CA7873C721AAE2ABE6AE4701F4CAA924 /* Pod */,
-			);
-			name = Resources;
 			sourceTree = "<group>";
 		};
 		5B6CDEDD07BF52734870CCE392257A3D /* iOS */ = {
@@ -508,6 +474,7 @@
 		8BDEF819ED1D2F2236CCE332F74757CE /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				4E206F621C79A3C30099042A /* POPMediaPicker.bundle */,
 				16BE83C7DA5A9E889C5E6682FB6C6711 /* POPMediaPicker.h */,
 				4B221A6B386E3FADEFBCA03BE23DE902 /* POPMediaPicker.m */,
 			);
@@ -578,18 +545,9 @@
 			path = POPLib;
 			sourceTree = "<group>";
 		};
-		CA7873C721AAE2ABE6AE4701F4CAA924 /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				45B84520E83C39CE9DE685DB35E33C8E /* Assets */,
-			);
-			path = Pod;
-			sourceTree = "<group>";
-		};
 		CE34F89014DE91F1C4BC33CADC636FC7 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				4E206F591C79A07D0099042A /* Assets */,
 				8BDEF819ED1D2F2236CCE332F74757CE /* Classes */,
 			);
 			path = Pod;
@@ -796,7 +754,7 @@
 				8A4681E39D6F0BFBF4B88ADCDE76EBD8 /* Sources */,
 				4B49280183E121BD999ECAEDF9BC5772 /* Frameworks */,
 				C1D66406EE8B7F8002F0F25A792BC4EE /* Headers */,
-				D9DD60B5F89D3CEC0AFBC2640F295688 /* Resources */,
+				078E15BC07FC6A942204EBB547C829A1 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -842,11 +800,11 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		D9DD60B5F89D3CEC0AFBC2640F295688 /* Resources */ = {
+		078E15BC07FC6A942204EBB547C829A1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E206F611C79A0C20099042A /* POPMediaPicker.bundle in Resources */,
+				4E206F631C79A3C30099042A /* POPMediaPicker.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

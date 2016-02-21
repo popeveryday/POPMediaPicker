@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'DEA9C88AF880136522C32941'
+               BlueprintIdentifier = '724ED04987463537E059C343'
                BlueprintName = 'POPMediaPicker'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'POPMediaPicker.framework'>
