@@ -48,11 +48,6 @@
     NSDate *now = [NSDate date];
     NSTimeInterval secondsSince = -(int)[self timeIntervalSinceDate:now];
     
-    //Should never hit this but handle the future case
-    if(secondsSince < 0)
-        return @"In The Future";
-        
-    
     // < 1 minute = "Just now"
     if(secondsSince < MINUTE)
         return @"Just now";

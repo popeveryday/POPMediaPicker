@@ -137,9 +137,9 @@
     [loading show:YES];
     
     //remove all file
-    NSString* path = [FileLib GetTempPath:@"POPMediaPickerVC"];
-    [FileLib RemoveFileOrDirectory:path];
-    [FileLib CreateDirectory:path];
+    NSString* path = [FileLib getTempPath:@"POPMediaPickerVC"];
+    [FileLib removeFileOrDirectory:path];
+    [FileLib createDirectory:path];
     
     dispatch_async(dispatch_get_main_queue(), ^{
         [self saveImage:assets index:0 savedFiles:[[NSMutableArray alloc] init]];
@@ -167,12 +167,12 @@
         NSString* originalFileName = [[assets[index] defaultRepresentation] filename];
         
         
-        NSString* saveFile = [FileLib GetTempPath:@"POPMediaPickerVC" autoCreateDir:YES];//[FileLib GetNewName:@"image_" suffix: @".jpg"];
+        NSString* saveFile = [FileLib getTempPath:@"POPMediaPickerVC" autoCreateDir:YES];//[FileLib GetNewName:@"image_" suffix: @".jpg"];
         
         saveFile = [saveFile stringByAppendingPathComponent:originalFileName];
         
         if ([self exportDataToURL:saveFile error:nil andAsset:assets[index]]) {
-            if ([FileLib GetFileSizeWithPath:saveFile] > 0) {
+            if ([FileLib getFileSizeWithPath:saveFile] > 0) {
                 [savedFiles addObject:saveFile];
                 
                 if ([_popMediaPickerDelegate respondsToSelector:@selector(popMediaPickerDidSaveOneFileToTempFolder:picker:)]) {
@@ -778,7 +778,7 @@
 -(void) updateTitle{
     if (self.rootController.returnOnSelectSingleItem) return;
     
-    labelToolbar.text = _collectionView.indexPathsForSelectedItems.count == 0 ? @"No Item Selected" : [NSString stringWithFormat:@"%@ Items Selected", [StringLib FormatDouble:_collectionView.indexPathsForSelectedItems.count decimalLength:0]];
+    labelToolbar.text = _collectionView.indexPathsForSelectedItems.count == 0 ? @"No Item Selected" : [NSString stringWithFormat:@"%@ Items Selected", [StringLib formatDouble:_collectionView.indexPathsForSelectedItems.count decimalLength:0]];
     
     [doneButton setEnabled: _collectionView.indexPathsForSelectedItems.count > 0];
 }

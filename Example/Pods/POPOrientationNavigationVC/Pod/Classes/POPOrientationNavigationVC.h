@@ -7,25 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-@class GTScrollNavigationBar;
 
 @interface POPOrientationNavigationVC : UINavigationController
-
-@end
-
-
-typedef enum {
-    GTScrollNavigationBarNone,
-    GTScrollNavigationBarScrollingDown,
-    GTScrollNavigationBarScrollingUp
-} GTScrollNavigationBarState;
-
-@interface GTScrollNavigationBar : UINavigationBar
-
-@property (strong, nonatomic) UIScrollView *scrollView;
-@property (assign, nonatomic) GTScrollNavigationBarState scrollState;
-
-- (void)resetToDefaultPositionWithAnimation:(BOOL)animated;
 
 @end
 

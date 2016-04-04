@@ -1,6 +1,6 @@
 {
   "name": "POPMediaPicker",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "summary": "Image/Video picker with capture/record buttons for Object-c project.",
   "homepage": "https://github.com/popeveryday/POPMediaPicker",
   "license": "MIT",
@@ -9,14 +9,14 @@
   },
   "source": {
     "git": "https://github.com/popeveryday/POPMediaPicker.git",
-    "tag": "0.1.3"
+    "tag": "0.1.4"
   },
   "platforms": {
     "ios": "7.1"
   },
   "requires_arc": true,
   "source_files": "Pod/Classes/**/*.{h,m,c}",
-  "resources": "Pod/Assets/*.bundle",
+  "resources": "Pod/Classes/**/*.bundle",
   "dependencies": {
     "POPLib": [
       "~> 0.1"
