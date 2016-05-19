@@ -28,8 +28,8 @@
 }
 
 -(void) addMedia:(id)sender{
-    POPMediaPickerVC* picker = [[POPMediaPickerVC alloc] initWithSourceAlbum:POPMediaPickerAlbumCameraRollOnly mediaType:POPMediaPickerFileTypeAll];
-    picker.returnOnSelectSingleItem = YES;
+    POPMediaPickerVC* picker = [[POPMediaPickerVC alloc] initWithSourceAlbum:POPMediaPickerAlbumAll mediaType:POPMediaPickerFileTypeAll];
+//    picker.returnOnSelectSingleItem = YES;
     picker.itemOrderDescending = YES;
     picker.showCaptureButton = YES;
     picker.popMediaPickerDelegate = self;

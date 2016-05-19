@@ -608,6 +608,7 @@
     if ( [((UIBarButtonItem*)sender).title isEqualToString:@"Select All"] ) {
         
         for (int i = 0; i < _assets.count; i++) {
+            if ( [_assets[i] class] != [ALAsset class] ) continue;
             [_collectionView selectItemAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0] animated:YES scrollPosition:UICollectionViewScrollPositionNone];
         }
         
