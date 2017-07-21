@@ -25,6 +25,10 @@
     BOOL isExecutePhotoDelegate;
 }
 
++(POPMediaPickerVC*) initWithSourceAlbum:(enum POPMediaPickerAlbum) sourceAlbum mediaType:(enum POPMediaPickerFileType) mediaType{
+    POPMediaPickerVC* picker = [[POPMediaPickerVC alloc] initWithSourceAlbum:sourceAlbum mediaType:mediaType];
+    return picker;
+}
 
 -(id) initWithSourceAlbum:(enum POPMediaPickerAlbum) sourceAlbum mediaType:(enum POPMediaPickerFileType) mediaType
 {
@@ -103,19 +107,32 @@
 
 -(void) cancelAction:(id)sender
 {
-    if ([_popMediaPickerDelegate respondsToSelector:@selector(popMediaPickerDidCancel:)]) {
+    
+    if (self.cancelBlock)
+    {
+        self.cancelBlock(self);
+    }
+    else if ([_popMediaPickerDelegate respondsToSelector:@selector(popMediaPickerDidCancel:)]) {
         [_popMediaPickerDelegate popMediaPickerDidCancel:self];
     }
     [self closeView];
 }
 
--(void) doneActionWithAssetImage:(NSMutableArray*)assetImages{
-    if ([self.popMediaPickerDelegate respondsToSelector:@selector(popMediaPickerDidSelectedImageAssets:picker:)]) {
+-(void) doneActionWithAssetImage:(NSMutableArray*)assetImages
+{
+    if (self.selectedImageAssetsBlock)
+    {
+        self.selectedImageAssetsBlock(assetImages, self);
+    }
+    else if ([self.popMediaPickerDelegate respondsToSelector:@selector(popMediaPickerDidSelectedImageAssets:picker:)])
+    {
         [self.popMediaPickerDelegate popMediaPickerDidSelectedImageAssets:assetImages picker:self];
     }
     
     if ([_popMediaPickerDelegate respondsToSelector:@selector(popMediaPickerDidSaveFilesToTempFolder:picker:)]
-        || [_popMediaPickerDelegate respondsToSelector:@selector(popMediaPickerDidSaveOneFileToTempFolder:picker:)])
+        || [_popMediaPickerDelegate respondsToSelector:@selector(popMediaPickerDidSaveOneFileToTempFolder:picker:)]
+        || self.saveFilesToTempFolderBlock
+        || self.saveOneFileToTempFolderBlock )
     {
         [self saveImageToTempFolder:assetImages];
     }else{
@@ -148,8 +165,14 @@
 
 -(void)saveImage:(NSMutableArray*) assets index:(NSInteger) index savedFiles:(NSMutableArray*)savedFiles{
     
-    if (index >= assets.count){
-        if ([_popMediaPickerDelegate respondsToSelector:@selector(popMediaPickerDidSaveFilesToTempFolder:picker:)]) {
+    if (index >= assets.count)
+    {
+        if (self.saveFilesToTempFolderBlock)
+        {
+            self.saveFilesToTempFolderBlock(savedFiles, self);
+        }
+        else if ([_popMediaPickerDelegate respondsToSelector:@selector(popMediaPickerDidSaveFilesToTempFolder:picker:)])
+        {
             [_popMediaPickerDelegate popMediaPickerDidSaveFilesToTempFolder:savedFiles picker:self];
         }
         
@@ -174,8 +197,12 @@
         if ([self exportDataToURL:saveFile error:nil andAsset:assets[index]]) {
             if ([FileLib getFileSizeWithPath:saveFile] > 0) {
                 [savedFiles addObject:saveFile];
-                
-                if ([_popMediaPickerDelegate respondsToSelector:@selector(popMediaPickerDidSaveOneFileToTempFolder:picker:)]) {
+                if (self.saveOneFileToTempFolderBlock)
+                {
+                    self.saveOneFileToTempFolderBlock(saveFile, self);
+                }
+                else if ([_popMediaPickerDelegate respondsToSelector:@selector(popMediaPickerDidSaveOneFileToTempFolder:picker:)])
+                {
                     [_popMediaPickerDelegate popMediaPickerDidSaveOneFileToTempFolder:saveFile picker:self];
                 }
             }
@@ -510,18 +537,23 @@
         && ![self.rootController.popMediaPickerDelegate respondsToSelector:@selector(popMediaPickerDidSaveRecordVideoToTempFolder:picker:)]
         && ![self.rootController.popMediaPickerDelegate respondsToSelector:@selector(popMediaPickerProcessCustomCaptureImage:)]
         && ![self.rootController.popMediaPickerDelegate respondsToSelector:@selector(popMediaPickerProcessCustomRecordVideo:)]
+        && !self.rootController.saveCaptureImageBlock
+        && !self.rootController.saveRecordVideoToTempFolderBlock
         )
     {
-        [[[UIAlertView alloc] initWithTitle:@"Delegate Invalidate" message:@"showCaptureButton = true\nRequire one of following delegates:\n - popMediaPickerDidSaveCaptureImage\n - popMediaPickerDidSaveRecordVideoToTempFolder\n - popMediaPickerProcessCustomCaptureImage\n - popMediaPickerProcessCustomRecordVideo"
+        [[[UIAlertView alloc] initWithTitle:@"Delegate Invalidate" message:@"showCaptureButton = true\nRequire one of following delegates:\n - popMediaPickerDidSaveCaptureImage\n - popMediaPickerDidSaveRecordVideoToTempFolder\n - popMediaPickerProcessCustomCaptureImage\n - popMediaPickerProcessCustomRecordVideo\n Or these blocks:\n - saveCaptureImageBlock\n - saveRecordVideoToTempFolderBlock"
                                    delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil] show];
     }
     
     if (![self.rootController.popMediaPickerDelegate respondsToSelector:@selector(popMediaPickerDidSaveFilesToTempFolder:picker:)]
         && ![self.rootController.popMediaPickerDelegate respondsToSelector:@selector(popMediaPickerDidSaveOneFileToTempFolder:picker:)]
         && ![self.rootController.popMediaPickerDelegate respondsToSelector:@selector(popMediaPickerDidSelectedImageAssets:picker:)]
+        && !self.rootController.selectedImageAssetsBlock
+        && !self.rootController.saveOneFileToTempFolderBlock
+        && !self.rootController.saveFilesToTempFolderBlock
         )
     {
-        [[[UIAlertView alloc] initWithTitle:@"Delegate Invalidate" message:@"Done button require one of following delegates:\n - popMediaPickerDidSaveFilesToTempFolder\n - popMediaPickerDidSaveOneFileToTempFolder\n - popMediaPickerDidSelectedImageAssets"
+        [[[UIAlertView alloc] initWithTitle:@"Delegate Invalidate" message:@"Done button require one of following delegates:\n - popMediaPickerDidSaveFilesToTempFolder\n - popMediaPickerDidSaveOneFileToTempFolder\n - popMediaPickerDidSelectedImageAssets\n Or these blocks:\n - selectedImageAssetsBlock\n - saveOneFileToTempFolderBlock\n - saveFilesToTempFolderBlock"
                                    delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil] show];
     }
 }
@@ -634,8 +666,10 @@
        && (
            [self.rootController.popMediaPickerDelegate respondsToSelector:@selector(popMediaPickerDidSaveCaptureImage:picker:)]
            || [self.rootController.popMediaPickerDelegate respondsToSelector:@selector(popMediaPickerProcessCustomCaptureImage:)]
-    || [self.rootController.popMediaPickerDelegate respondsToSelector:@selector(popMediaPickerReturnCustomCaptureImageController:picker:)]
-           ) )
+           || [self.rootController.popMediaPickerDelegate respondsToSelector:@selector(popMediaPickerReturnCustomCaptureImageController:picker:)]
+           || self.rootController.saveCaptureImageBlock
+           )
+       )
     {
         return YES;
     }
@@ -646,6 +680,7 @@
         [self.rootController.popMediaPickerDelegate respondsToSelector:@selector(popMediaPickerDidSaveRecordVideoToTempFolder:picker:)]
            || [self.rootController.popMediaPickerDelegate respondsToSelector:@selector(popMediaPickerProcessCustomRecordVideo:)]
            || [self.rootController.popMediaPickerDelegate respondsToSelector:@selector(popMediaPickerReturnCustomRecordVideoController:picker:)]
+           || self.rootController.saveRecordVideoToTempFolderBlock
            )
        
        )
@@ -839,8 +874,11 @@
 
 -(void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-    if(picker.cameraCaptureMode == UIImagePickerControllerCameraCaptureModePhoto){
-        if ([self.rootController.popMediaPickerDelegate respondsToSelector:@selector(popMediaPickerDidSaveCaptureImage:picker:)])
+    if(picker.cameraCaptureMode == UIImagePickerControllerCameraCaptureModePhoto)
+    {
+        if ([self.rootController.popMediaPickerDelegate respondsToSelector:@selector(popMediaPickerDidSaveCaptureImage:picker:)]
+            || self.rootController.saveCaptureImageBlock
+            )
         {
             UIImage *newImage = [info objectForKey:UIImagePickerControllerOriginalImage];
             
@@ -850,14 +888,22 @@
             [ViewLib showLoading:picker.view];
             
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self.rootController.popMediaPickerDelegate popMediaPickerDidSaveCaptureImage:newImage picker:self.rootController];
+                if(self.rootController.saveCaptureImageBlock)
+                    self.rootController.saveCaptureImageBlock(newImage, self.rootController);
+                else
+                    [self.rootController.popMediaPickerDelegate popMediaPickerDidSaveCaptureImage:newImage picker:self.rootController];
                 [ViewLib hideLoading:picker.view];
             });
             
         }
     }else{
-        if ([self.rootController.popMediaPickerDelegate respondsToSelector:@selector(popMediaPickerDidSaveRecordVideoToTempFolder:picker:)]) {
-            
+        if (self.rootController.saveRecordVideoToTempFolderBlock)
+        {
+            NSURL *recordedVideoURL = [info objectForKey:UIImagePickerControllerMediaURL];
+            self.rootController.saveRecordVideoToTempFolderBlock(recordedVideoURL.path, self.rootController);
+        }
+        else if ([self.rootController.popMediaPickerDelegate respondsToSelector:@selector(popMediaPickerDidSaveRecordVideoToTempFolder:picker:)])
+        {
             NSURL *recordedVideoURL = [info objectForKey:UIImagePickerControllerMediaURL];
             [self.rootController.popMediaPickerDelegate popMediaPickerDidSaveRecordVideoToTempFolder:recordedVideoURL.path picker:self.rootController];
         }
@@ -878,16 +924,25 @@
 
 -(void) POPMediaPickerCustomCameraDoneWithImage:(UIImage*)image
 {
-    if ([self.rootController.popMediaPickerDelegate respondsToSelector:@selector(popMediaPickerDidSaveCaptureImage:picker:)]) {
+    if (self.rootController.saveCaptureImageBlock){
+        self.rootController.saveCaptureImageBlock(image, self.rootController);
+    }
+    else if ([self.rootController.popMediaPickerDelegate respondsToSelector:@selector(popMediaPickerDidSaveCaptureImage:picker:)])
+    {
         [self.rootController.popMediaPickerDelegate popMediaPickerDidSaveCaptureImage:image picker:self.rootController];
     }
+    
     [self.rootController closeView];
 }
 
 
 -(void) POPMediaPickerCustomCameraDoneVideoPath:(NSString *)videoPath
 {
-    if ([self.rootController.popMediaPickerDelegate respondsToSelector:@selector(popMediaPickerDidSaveRecordVideoToTempFolder:picker:)]) {
+    if (self.rootController.saveRecordVideoToTempFolderBlock){
+        self.rootController.saveRecordVideoToTempFolderBlock(videoPath, self.rootController);
+    }
+    else if ([self.rootController.popMediaPickerDelegate respondsToSelector:@selector(popMediaPickerDidSaveRecordVideoToTempFolder:picker:)])
+    {
         [self.rootController.popMediaPickerDelegate popMediaPickerDidSaveRecordVideoToTempFolder:videoPath picker:self.rootController];
     }
     [self.rootController closeView];

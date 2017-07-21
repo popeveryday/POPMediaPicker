@@ -69,6 +69,29 @@ enum POPMediaPickerAlbum
 @end
 
 
+//for callback block=======================================
+typedef void (^SelectedImageAssetsBlock)(NSMutableArray* imageAssets, POPMediaPickerVC* picker);
+typedef void (^CancelBlock)( POPMediaPickerVC* picker);
+
+typedef void (^SaveFilesToTempFolderBlock)(NSMutableArray* savedFiles, POPMediaPickerVC* picker);
+typedef void (^SaveOneFileToTempFolderBlock)(NSString* file, POPMediaPickerVC* picker);
+
+typedef void (^SaveCaptureImageBlock)(UIImage*image, POPMediaPickerVC* picker);
+typedef void (^SaveRecordVideoToTempFolderBlock)(NSString* file, POPMediaPickerVC* picker);
+
+//call custom camera photo/video after close picker
+typedef void (^ProcessCustomCaptureImageBlock)(POPMediaPickerVC* picker);
+typedef void (^ProcessCustomRecordVideoBlock)(POPMediaPickerVC* picker);
+
+//return controller that process capture/record and have to implement POPMediaPickerCustomCameraDelegate
+typedef UIViewController* (^ReturnCustomCaptureImageControllerBlock)(id<POPMediaPickerCustomCameraDelegate> delegate, POPMediaPickerVC* picker);
+typedef UIViewController* (^ReturnCustomRecordVideoControllerBlock)(id<POPMediaPickerCustomCameraDelegate> delegate, POPMediaPickerVC* picker);
+
+
+
+
+
+
 
 
 @interface POPMediaPickerVC : POPOrientationNavigationVC
@@ -83,6 +106,7 @@ enum POPMediaPickerAlbum
 @property (nonatomic) BOOL showCaptureButton;
 
 -(id) initWithSourceAlbum:(enum POPMediaPickerAlbum) sourceAlbum mediaType:(enum POPMediaPickerFileType) mediaType;
++(POPMediaPickerVC*) initWithSourceAlbum:(enum POPMediaPickerAlbum) sourceAlbum mediaType:(enum POPMediaPickerFileType) mediaType;
 
 -(void) cancelAction:(id)sender;
 -(void) doneActionWithAssetImage:(NSMutableArray*)assetImages;
@@ -90,6 +114,26 @@ enum POPMediaPickerAlbum
 -(void) SetNavigationBarColorHex:(NSString*)colorhex;
 
 -(void) closeView;
+
+
+//for callback block=======================================
+@property (nonatomic) SelectedImageAssetsBlock selectedImageAssetsBlock;
+@property (nonatomic) CancelBlock cancelBlock;
+
+@property (nonatomic) SaveFilesToTempFolderBlock saveFilesToTempFolderBlock;
+@property (nonatomic) SaveOneFileToTempFolderBlock saveOneFileToTempFolderBlock;
+
+@property (nonatomic) SaveCaptureImageBlock saveCaptureImageBlock;
+@property (nonatomic) SaveRecordVideoToTempFolderBlock saveRecordVideoToTempFolderBlock;
+
+//call custom camera photo/video after close picker
+//@property (nonatomic) ProcessCustomCaptureImageBlock processCustomCaptureImageBlock;
+//@property (nonatomic) ProcessCustomRecordVideoBlock processCustomRecordVideoBlock;
+
+//return controller that process capture/record and have to implement POPMediaPickerCustomCameraDelegate
+//@property (nonatomic) ReturnCustomCaptureImageControllerBlock returnCustomCaptureImageControllerBlock;
+//@property (nonatomic) ReturnCustomRecordVideoControllerBlock returnCustomRecordVideoControllerBlock;
+
 
 @end
 
@@ -110,3 +154,14 @@ enum POPMediaPickerAlbum
 @property (nonatomic) POPMediaPickerVC* rootController;
 
 @end
+
+/*
+ 
+ get uiimage from ALAsset
+ 
+ ALAssetRepresentation *representation = [asset defaultRepresentation];
+ CGImageRef resolutionRef = [representation fullResolutionImage];
+ UIImage *image = [UIImage imageWithCGImage:resolutionRef scale:1.0f orientation:(UIImageOrientation)representation.orientation];
+ 
+ 
+ */
