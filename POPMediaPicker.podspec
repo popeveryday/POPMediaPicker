@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name             = "POPMediaPicker"
-s.version          = "0.1.44"
+s.version          = "0.1.45"
 s.summary          = "Image/Video picker with capture/record buttons for Object-c project."
 s.homepage         = "https://github.com/popeveryday/POPMediaPicker"
 s.license          = 'MIT'

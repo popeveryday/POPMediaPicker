@@ -69,29 +69,6 @@ enum POPMediaPickerAlbum
 @end
 
 
-//for callback block=======================================
-typedef void (^SelectedImageAssetsBlock)(NSMutableArray* imageAssets, POPMediaPickerVC* picker);
-typedef void (^CancelBlock)( POPMediaPickerVC* picker);
-
-typedef void (^SaveFilesToTempFolderBlock)(NSMutableArray* savedFiles, POPMediaPickerVC* picker);
-typedef void (^SaveOneFileToTempFolderBlock)(NSString* file, POPMediaPickerVC* picker);
-
-typedef void (^SaveCaptureImageBlock)(UIImage*image, POPMediaPickerVC* picker);
-typedef void (^SaveRecordVideoToTempFolderBlock)(NSString* file, POPMediaPickerVC* picker);
-
-//call custom camera photo/video after close picker
-typedef void (^ProcessCustomCaptureImageBlock)(POPMediaPickerVC* picker);
-typedef void (^ProcessCustomRecordVideoBlock)(POPMediaPickerVC* picker);
-
-//return controller that process capture/record and have to implement POPMediaPickerCustomCameraDelegate
-typedef UIViewController* (^ReturnCustomCaptureImageControllerBlock)(id<POPMediaPickerCustomCameraDelegate> delegate, POPMediaPickerVC* picker);
-typedef UIViewController* (^ReturnCustomRecordVideoControllerBlock)(id<POPMediaPickerCustomCameraDelegate> delegate, POPMediaPickerVC* picker);
-
-
-
-
-
-
 
 
 @interface POPMediaPickerVC : POPOrientationNavigationVC
@@ -117,6 +94,25 @@ typedef UIViewController* (^ReturnCustomRecordVideoControllerBlock)(id<POPMediaP
 
 
 //for callback block=======================================
+
+typedef void (^SelectedImageAssetsBlock)(NSMutableArray* imageAssets, POPMediaPickerVC* picker);
+typedef void (^CancelBlock)( POPMediaPickerVC* picker);
+
+typedef void (^SaveFilesToTempFolderBlock)(NSMutableArray* savedFiles, POPMediaPickerVC* picker);
+typedef void (^SaveOneFileToTempFolderBlock)(NSString* file, POPMediaPickerVC* picker);
+
+typedef void (^SaveCaptureImageBlock)(UIImage*image, POPMediaPickerVC* picker);
+typedef void (^SaveRecordVideoToTempFolderBlock)(NSString* file, POPMediaPickerVC* picker);
+
+//call custom camera photo/video after close picker
+//typedef void (^ProcessCustomCaptureImageBlock)(POPMediaPickerVC* picker);
+//typedef void (^ProcessCustomRecordVideoBlock)(POPMediaPickerVC* picker);
+
+//return controller that process capture/record and have to implement POPMediaPickerCustomCameraDelegate
+//typedef UIViewController* (^ReturnCustomCaptureImageControllerBlock)(id<POPMediaPickerCustomCameraDelegate> delegate, POPMediaPickerVC* picker);
+//typedef UIViewController* (^ReturnCustomRecordVideoControllerBlock)(id<POPMediaPickerCustomCameraDelegate> delegate, POPMediaPickerVC* picker);
+
+
 @property (nonatomic) SelectedImageAssetsBlock selectedImageAssetsBlock;
 @property (nonatomic) CancelBlock cancelBlock;
 
