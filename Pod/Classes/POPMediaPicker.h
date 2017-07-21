@@ -95,41 +95,14 @@ enum POPMediaPickerAlbum
 
 //for callback block=======================================
 
-typedef void (^SelectedImageAssetsBlock)(NSMutableArray* imageAssets, POPMediaPickerVC* picker);
-typedef void (^CancelBlock)( POPMediaPickerVC* picker);
+@property (nonatomic) void (^selectedImageAssetsBlock)(NSMutableArray* imageAssets, POPMediaPickerVC* picker);
+@property (nonatomic) void (^cancelBlock)(POPMediaPickerVC* picker);
 
-typedef void (^SaveFilesToTempFolderBlock)(NSMutableArray* savedFiles, POPMediaPickerVC* picker);
-typedef void (^SaveOneFileToTempFolderBlock)(NSString* file, POPMediaPickerVC* picker);
+@property (nonatomic) void (^saveFilesToTempFolderBlock)(NSMutableArray* savedFiles, POPMediaPickerVC* picker);
+@property (nonatomic) void (^saveOneFileToTempFolderBlock)(NSString* file, POPMediaPickerVC* picker);
 
-typedef void (^SaveCaptureImageBlock)(UIImage*image, POPMediaPickerVC* picker);
-typedef void (^SaveRecordVideoToTempFolderBlock)(NSString* file, POPMediaPickerVC* picker);
-
-//call custom camera photo/video after close picker
-//typedef void (^ProcessCustomCaptureImageBlock)(POPMediaPickerVC* picker);
-//typedef void (^ProcessCustomRecordVideoBlock)(POPMediaPickerVC* picker);
-
-//return controller that process capture/record and have to implement POPMediaPickerCustomCameraDelegate
-//typedef UIViewController* (^ReturnCustomCaptureImageControllerBlock)(id<POPMediaPickerCustomCameraDelegate> delegate, POPMediaPickerVC* picker);
-//typedef UIViewController* (^ReturnCustomRecordVideoControllerBlock)(id<POPMediaPickerCustomCameraDelegate> delegate, POPMediaPickerVC* picker);
-
-
-@property (nonatomic) SelectedImageAssetsBlock selectedImageAssetsBlock;
-@property (nonatomic) CancelBlock cancelBlock;
-
-@property (nonatomic) SaveFilesToTempFolderBlock saveFilesToTempFolderBlock;
-@property (nonatomic) SaveOneFileToTempFolderBlock saveOneFileToTempFolderBlock;
-
-@property (nonatomic) SaveCaptureImageBlock saveCaptureImageBlock;
-@property (nonatomic) SaveRecordVideoToTempFolderBlock saveRecordVideoToTempFolderBlock;
-
-//call custom camera photo/video after close picker
-//@property (nonatomic) ProcessCustomCaptureImageBlock processCustomCaptureImageBlock;
-//@property (nonatomic) ProcessCustomRecordVideoBlock processCustomRecordVideoBlock;
-
-//return controller that process capture/record and have to implement POPMediaPickerCustomCameraDelegate
-//@property (nonatomic) ReturnCustomCaptureImageControllerBlock returnCustomCaptureImageControllerBlock;
-//@property (nonatomic) ReturnCustomRecordVideoControllerBlock returnCustomRecordVideoControllerBlock;
-
+@property (nonatomic) void (^saveCaptureImageBlock)(UIImage*image, POPMediaPickerVC* picker);
+@property (nonatomic) void (^saveRecordVideoToTempFolderBlock)(NSString* file, POPMediaPickerVC* picker);
 
 @end
 
