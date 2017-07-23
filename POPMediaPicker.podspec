@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name             = "POPMediaPicker"
-s.version          = "0.1.46"
+s.version          = "0.1.47"
 s.summary          = "Image/Video picker with capture/record buttons for Object-c project."
 s.homepage         = "https://github.com/popeveryday/POPMediaPicker"
 s.license          = 'MIT'
@@ -12,5 +12,5 @@ s.source_files = 'Pod/Classes/**/*.{h,m,c}'
 s.resources = 'Pod/Classes/**/*.bundle'
 s.dependency 'POPLib', '~> 0.1'
 s.dependency 'POPOrientationNavigationVC', '~> 0.1'
-s.dependency 'MBProgressHUD', '~> 0.9'
+s.dependency 'MBProgressHUD', '~> 1.0'
 end
