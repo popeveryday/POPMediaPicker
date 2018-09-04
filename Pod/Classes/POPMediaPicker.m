@@ -148,10 +148,10 @@
 {
     loading = [[MBProgressHUD alloc] initWithView:self.view];
     [self.view addSubview:loading];
-    loading.labelText = @"Saving Images";
-    loading.detailsLabelText = @"please wait";
+    loading.label.text = @"Saving Images";
+    loading.detailsLabel.text = @"please wait";
     loading.square = YES;
-    [loading show:YES];
+    [loading showAnimated:YES];
     
     //remove all file
     NSString* path = [FileLib getTempPath:@"POPMediaPickerVC"];
@@ -176,14 +176,14 @@
             [_popMediaPickerDelegate popMediaPickerDidSaveFilesToTempFolder:savedFiles picker:self];
         }
         
-        [loading hide:YES];
+        [loading hideAnimated:YES];
         
         [self closeView];
         
         return;
     }
     
-    loading.detailsLabelText = [NSString stringWithFormat:@"%lu / %lu", (unsigned long)index+1, (unsigned long)assets.count];
+    loading.detailsLabel.text = [NSString stringWithFormat:@"%lu / %lu", (unsigned long)index+1, (unsigned long)assets.count];
     
     @autoreleasepool
     {
@@ -467,9 +467,9 @@
         
         labelToolbar = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 150, 44)];
         labelToolbar.textAlignment = NSTextAlignmentCenter;
-        UIBarItem* titleItem = [[UIBarButtonItem alloc] initWithCustomView:labelToolbar];
+        UIBarButtonItem* titleItem = [[UIBarButtonItem alloc] initWithCustomView:labelToolbar];
         
-        UIBarItem* space = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+        UIBarButtonItem* space = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
         
         [self.navigationController setToolbarHidden:NO animated:NO];
         [self setToolbarItems:@[selectButton, space, titleItem, space, cancelButton]];
@@ -601,13 +601,13 @@
             else [self.assets addObject:imgNameRecord];
         }
         
-
+        __weak typeof(self) weakSelf = self;
         dispatch_sync(dispatch_get_main_queue(), ^{
-            [_collectionView reloadData];
+            [weakSelf.collectionView reloadData];
             // scroll to bottom if show ascending items
             if (!self.rootController.itemOrderDescending) {
-                NSIndexPath *lastIndexPath = [NSIndexPath indexPathForItem:_assets.count-1 inSection:0];
-                [_collectionView scrollToItemAtIndexPath:lastIndexPath atScrollPosition:UICollectionViewScrollPositionBottom animated:NO];
+                NSIndexPath *lastIndexPath = [NSIndexPath indexPathForItem:weakSelf.assets.count-1 inSection:0];
+                [weakSelf.collectionView scrollToItemAtIndexPath:lastIndexPath atScrollPosition:UICollectionViewScrollPositionBottom animated:NO];
             }
             
             self.title = [self.assetsGroup valueForProperty:ALAssetsGroupPropertyName];

@@ -1,12 +1,12 @@
 source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
+platform :ios, ‘8.0’
 
-target 'POPMediaPicker_Example', :exclusive => true do
+target 'POPMediaPicker_Example' do
   pod 'POPMediaPicker', :path => '../'
+  target 'POPMediaPicker_Tests' do
+    inherit! :search_paths
+  end
 end
 
-target 'POPMediaPicker_Tests', :exclusive => true do
-  pod 'POPMediaPicker', :path => '../'
 
-  
-end

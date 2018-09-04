@@ -1,17 +1,28 @@
+echo "Enter version"
+read version
+
 echo "Enter next submit comment"
-read answer
+read comment
 
 echo "Allow warning? (y/[n])"
 read alw
 
 
-if [ "$answer" == '' ] ; 
+
+if [ "$version" == '' ] ; 
 then
     echo "nothing"
 else
-	git add -A && git commit -m $answer
+	if [ "$comment" == '' ] ; 
+	then
+    	git add -A && git commit -m $version
+	else
+		git add -A && git commit -m "'$comment'"
+	fi
+
+	
 	git push origin master
-	git tag $answer
+	git tag $version
 	git push --tag
 	
 	folder=${PWD##*/} 
@@ -22,6 +33,8 @@ else
 	else
 		pod trunk push $folder.podspec
 	fi
+
+	
 fi
 
 

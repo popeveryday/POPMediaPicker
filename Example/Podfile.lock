@@ -1,24 +1,60 @@
 PODS:
-  - MBProgressHUD (0.9.2)
-  - POPLib (0.1.69):
-    - MBProgressHUD (~> 0.9)
-  - POPMediaPicker (0.1.42):
-    - MBProgressHUD (~> 0.9)
+  - FontAwesomeKit (2.2.1):
+    - FontAwesomeKit/Core (= 2.2.1)
+    - FontAwesomeKit/FontAwesome (= 2.2.1)
+    - FontAwesomeKit/FoundationIcons (= 2.2.1)
+    - FontAwesomeKit/IonIcons (= 2.2.1)
+    - FontAwesomeKit/Material (= 2.2.1)
+    - FontAwesomeKit/Octicons (= 2.2.1)
+    - FontAwesomeKit/Zocial (= 2.2.1)
+  - FontAwesomeKit/Core (2.2.1)
+  - FontAwesomeKit/FontAwesome (2.2.1):
+    - FontAwesomeKit/Core
+  - FontAwesomeKit/FoundationIcons (2.2.1):
+    - FontAwesomeKit/Core
+  - FontAwesomeKit/IonIcons (2.2.1):
+    - FontAwesomeKit/Core
+  - FontAwesomeKit/Material (2.2.1):
+    - FontAwesomeKit/Core
+  - FontAwesomeKit/Octicons (2.2.1):
+    - FontAwesomeKit/Core
+  - FontAwesomeKit/Zocial (2.2.1):
+    - FontAwesomeKit/Core
+  - MBProgressHUD (1.1.0)
+  - POPLib (0.4.23):
+    - FontAwesomeKit (~> 2.2.0)
+    - MBProgressHUD (~> 1.0)
+    - PureLayout
+  - POPMediaPicker (0.1.47):
+    - MBProgressHUD (~> 1.0)
     - POPLib (~> 0.1)
     - POPOrientationNavigationVC (~> 0.1)
   - POPOrientationNavigationVC (0.1.24)
+  - PureLayout (3.1.2)
 
 DEPENDENCIES:
   - POPMediaPicker (from `../`)
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - FontAwesomeKit
+    - MBProgressHUD
+    - POPLib
+    - POPOrientationNavigationVC
+    - PureLayout
+
 EXTERNAL SOURCES:
   POPMediaPicker:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
-  MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
-  POPLib: e71b43a261ebf87bfcb4b35bce915928123a11eb
-  POPMediaPicker: abf5f7571e500beb78e181730304896691ed8db5
+  FontAwesomeKit: 3614979b3dbb0ec3f7fac1bd760b91f66c31db67
+  MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
+  POPLib: 3cde08b1624a0e06d31ac6f6f6234c2656182cbf
+  POPMediaPicker: 8226796362a7b59a1aececcf7dd2af5ce6237ada
   POPOrientationNavigationVC: 02db2512b86b84558bd1c200cf5cfcc15a46f7a3
+  PureLayout: 4634d0b61e3b5021166e8ec7c18e9e0ca0720c8b
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: 3fa91aca412f20136c30b83fd0aaaa52000c9633
+
+COCOAPODS: 1.5.3
