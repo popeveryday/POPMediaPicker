@@ -541,8 +541,8 @@
         
         [self.rootController checkPhotoPermission:^(BOOL isGranted) {
             if(!isGranted) return;
-            assetsLibrary = [[ALAssetsLibrary alloc] init];
-            [assetsLibrary enumerateGroupsWithTypes:ALAssetsGroupSavedPhotos usingBlock:listGroupBlock
+            self->assetsLibrary = [[ALAssetsLibrary alloc] init];
+            [self->assetsLibrary enumerateGroupsWithTypes:ALAssetsGroupSavedPhotos usingBlock:listGroupBlock
                                        failureBlock:failureBlock];
         }];
         

@@ -49,7 +49,7 @@
 		50D8B63C66152578A61821B02E274AC9 /* CoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 06E4149612E647AE76EC595CE3F112F9 /* CoreData.m */; };
 		51698F71772EF6C338335862DC7FB56A /* PureLayout+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 20040A2DF7A9C315F0A643FA75446F2E /* PureLayout+Internal.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5832280486E1376CBD13F70A8C6F02C6 /* FAKOcticons.m in Sources */ = {isa = PBXBuildFile; fileRef = 39C98711A84B5413ECF90B7D73A3CA83 /* FAKOcticons.m */; };
-		588E1C962150F91B000129A6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 588E1C982150F91B000129A6 /* Localizable.strings */; };
+		58A9821A2151408E00137421 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58A9821C2151408E00137421 /* Localizable.strings */; };
 		59886DD5AA6CD94A8BD76E8D4A35D2FC /* ImageLib.m in Sources */ = {isa = PBXBuildFile; fileRef = 88AA49FD7A7BB2594D839CD90B348DCB /* ImageLib.m */; };
 		5A3E8479DBD046B854394A61160018A8 /* NetLib.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B29C9DD153EE3B4D617CCCF092535F7 /* NetLib.m */; };
 		5B4127CC626C5323C66DA1B7199F9D41 /* MBProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 273A37ACD2B3708E4B24BEBCD548B2B4 /* MBProgressHUD.framework */; };
@@ -291,8 +291,8 @@
 		543B1A42DEFA7190DAF6597D24770E55 /* Pods-POPMediaPicker_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-POPMediaPicker_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		5797B075EC6A31CAD7C982A8A75548CB /* NSArray+PureLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+PureLayout.m"; path = "PureLayout/PureLayout/NSArray+PureLayout.m"; sourceTree = "<group>"; };
 		583B79AC407B75B0557995278CD4D2B7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		588E1C972150F91B000129A6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		588E1C992150F939000129A6 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
+		58A9821B2151408E00137421 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		58A9821D2151409000137421 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		58CE1C0BE3664DDAC80D9F352758E01F /* FAKIcon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FAKIcon.h; path = FontAwesomeKit/FAKIcon.h; sourceTree = "<group>"; };
 		59BB261CBD260B14539F154466ED25AB /* MBProgressHUD.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		5E066CB71A315B75CDD9CAE94439E8EC /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -941,7 +941,7 @@
 			isa = PBXGroup;
 			children = (
 				101BC0A9549E89AF836E7DEDC0108BDC /* POPMediaPicker.bundle */,
-				588E1C982150F91B000129A6 /* Localizable.strings */,
+				58A9821C2151408E00137421 /* Localizable.strings */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1253,7 +1253,6 @@
 				61FA9EF01CB62B6F8F33C42E50CAF536 /* FontAwesome.otf in Resources */,
 				1769170427A6B5C9688007764866EDDA /* foundation-icons.ttf in Resources */,
 				A6D1C9304CF49244EB5D99A69971A8EE /* ionicons.ttf in Resources */,
-				588E1C962150F91B000129A6 /* Localizable.strings in Resources */,
 				FDFB10982DFB0AE07FB9571456B05CC7 /* Material-Design-Iconic-Font.ttf in Resources */,
 				0281A099B6DF240CD72EE130618B1B0F /* octicons.ttf in Resources */,
 				6A72C8E44A0E2774C76D073F982E117F /* zocial-regular-webfont.ttf in Resources */,
@@ -1265,6 +1264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B82B37AFD80E2BCCA2321C7E517EE4AA /* POPMediaPicker.bundle in Resources */,
+				58A9821A2151408E00137421 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1467,11 +1467,11 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		588E1C982150F91B000129A6 /* Localizable.strings */ = {
+		58A9821C2151408E00137421 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				588E1C972150F91B000129A6 /* en */,
-				588E1C992150F939000129A6 /* vi */,
+				58A9821B2151408E00137421 /* en */,
+				58A9821D2151409000137421 /* vi */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -1577,7 +1577,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -2047,7 +2046,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

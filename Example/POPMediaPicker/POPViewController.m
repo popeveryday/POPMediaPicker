@@ -8,6 +8,7 @@
 
 #import "POPViewController.h"
 #import <POPMediaPicker/POPMediaPicker.h>
+#import <POPLib/POPLib.h>
 
 @interface POPViewController ()<POPMediaPickerDelegate>
 
@@ -25,10 +26,12 @@
     button.frame = CGRectMake(0, 0, 140, 40);
     button.center = self.view.center;
     [self.view addSubview:button];
+    
+    LocalizedDefaultLanguageCode(@"vi");
 }
 
 -(void) addMedia:(id)sender{
-    POPMediaPickerVC* picker = [[POPMediaPickerVC alloc] initWithSourceAlbum:POPMediaPickerAlbumAll mediaType:POPMediaPickerFileTypeAll];
+    POPMediaPickerVC* picker = [[POPMediaPickerVC alloc] initWithSourceAlbum:POPMediaPickerAlbumCameraRollOnly mediaType:POPMediaPickerFileTypeAll];
 //    picker.returnOnSelectSingleItem = YES;
     picker.itemOrderDescending = YES;
     picker.showCaptureButton = YES;
