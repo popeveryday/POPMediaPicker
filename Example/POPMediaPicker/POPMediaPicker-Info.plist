@@ -43,5 +43,11 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+    <key>NSCameraUsageDescription</key>
+    <string>Record video</string>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>Record video with audio</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>Copy media from/to Camera Roll</string>
 </dict>
 </plist>

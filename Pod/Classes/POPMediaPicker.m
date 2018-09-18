@@ -8,6 +8,7 @@
 
 #import "POPMediaPicker.h"
 #import <MobileCoreServices/UTCoreTypes.h>
+@import Photos;
 
 #define imgNameCapture @"POPMediaPicker.bundle/POPMediaPickerCapture"
 #define imgNameRecord @"POPMediaPicker.bundle/POPMediaPickerRecord"
@@ -48,7 +49,7 @@
         self.mediaType = mediaType;
         self.sourceAlbum = sourceAlbum;
     }
-
+    
     return self;
 }
 
@@ -56,7 +57,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    
 }
 
 -(void) viewDidDisappear:(BOOL)animated{
@@ -148,8 +150,8 @@
 {
     loading = [[MBProgressHUD alloc] initWithView:self.view];
     [self.view addSubview:loading];
-    loading.label.text = @"Saving Images";
-    loading.detailsLabel.text = @"please wait";
+    loading.label.text = LocalizedText(@"Saving Images", nil) ;
+    loading.detailsLabel.text = LocalizedText(@"please wait", nil);
     loading.square = YES;
     [loading showAnimated:YES];
     
@@ -259,6 +261,35 @@
     [ViewLib setNavigationBarColorHex:colorhex viewController:self.viewControllers.firstObject];
 }
 
+- (void)checkPhotoPermission:(void(^)(BOOL isGranted))completeBlock
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        PHAuthorizationStatus status = [PHPhotoLibrary authorizationStatus];
+        if (status == PHAuthorizationStatusAuthorized)
+        {
+            completeBlock(YES);
+        }
+        else
+        {
+            //No permission. Trying to normally request it
+            [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
+                if (status != PHAuthorizationStatusAuthorized)
+                {
+                    [self showPhotoPermissionMsg];
+                    completeBlock(NO);
+                }
+            }];
+        }
+    });
+}
+
+-(void) showPhotoPermissionMsg
+{
+    [ViewLib alertWithTitle:LocalizedText(@"Photo Permission", nil) message:LocalizedText(@"App has no permission to access Photos library", nil) fromViewController:self callback:^(NSString *buttonTitle, NSString *alertTitle) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
+        [self cancelAction:nil];
+    } cancelButtonTitle:LocalizedText(@"Allow Access", nil) otherButtonTitles:nil];
+}
 
 @end
 
@@ -284,32 +315,21 @@
 {
     [super viewDidLoad];
     
-    self.title = @"Photo Library";
+    self.title = LocalizedText(@"Photo Library", nil);
     
     UIBarButtonItem* cancelButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self.rootController action:@selector(cancelAction:)];
     self.navigationItem.rightBarButtonItem = cancelButton;
     
-
+    
     _assetsLibrary = [[ALAssetsLibrary alloc] init];
     _groups = [[NSMutableArray alloc] init];
+    
+    
     
     // setup our failure view controller in case enumerateGroupsWithTypes fails
     ALAssetsLibraryAccessFailureBlock failureBlock = ^(NSError *error)
     {
-        NSString *errorMessage = nil;
-        switch ([error code]) {
-            case ALAssetsLibraryAccessUserDeniedError:
-            case ALAssetsLibraryAccessGloballyDeniedError:
-                errorMessage = @"The user has declined access to it.";
-                break;
-            default:
-                errorMessage = @"Reason unknown.";
-                break;
-        }
-        
-        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Load Photo Library Failure!" message:@"Photo Library isn't accessable.\nPlease enable it form the iOS Settings app > Privacy > Photo > Turn on" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
-        [alert show];
-        
+        [self.rootController showPhotoPermissionMsg];
     };
     
     // emumerate through our groups and only add groups that contain photos
@@ -342,9 +362,17 @@
     if( self.rootController.sourceAlbum == POPMediaPickerAlbumShareOnly )
         groupTypes = ALAssetsGroupPhotoStream;
     
-    [self.assetsLibrary enumerateGroupsWithTypes:groupTypes usingBlock:listGroupBlock
-                                    failureBlock:failureBlock];
+    
+    [self.rootController checkPhotoPermission:^(BOOL isGranted) {
+        if(!isGranted) return;
+        [self.assetsLibrary enumerateGroupsWithTypes:groupTypes usingBlock:listGroupBlock
+                                        failureBlock:failureBlock];
+    }];
+    
+    
 }
+
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -372,11 +400,11 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (cell == nil)
-	{
-		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
-		cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-	}
+    }
     
     ALAssetsGroup *groupForCell = self.groups[indexPath.row];
     CGImageRef posterImageRef = [groupForCell posterImage];
@@ -420,7 +448,7 @@
     UIBarButtonItem* doneButton;
     CGSize cellSize;
     ALAssetsLibrary *assetsLibrary;
-    BOOL isInitAsset;
+    BOOL isInitAsset, isCameraGranted, isMicrophoneGranted, isOpenCameraPicker;
 }
 
 
@@ -462,8 +490,8 @@
     
     //toolbar
     if (self.rootController.returnOnSelectSingleItem == NO) {
-        UIBarButtonItem* selectButton = [[UIBarButtonItem alloc] initWithTitle:@"Select All" style:UIBarButtonItemStylePlain target:self action:@selector(selectAllAction:)];
-        UIBarButtonItem* cancelButton = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStylePlain target:self.rootController action:@selector(cancelAction:)];
+        UIBarButtonItem* selectButton = [[UIBarButtonItem alloc] initWithTitle:LocalizedText(@"Select All", nil) style:UIBarButtonItemStylePlain target:self action:@selector(selectAllAction:)];
+        UIBarButtonItem* cancelButton = [[UIBarButtonItem alloc] initWithTitle:LocalizedText(@"Cancel", nil) style:UIBarButtonItemStylePlain target:self.rootController action:@selector(cancelAction:)];
         
         labelToolbar = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 150, 44)];
         labelToolbar.textAlignment = NSTextAlignmentCenter;
@@ -489,20 +517,7 @@
         // setup our failure view controller in case enumerateGroupsWithTypes fails
         ALAssetsLibraryAccessFailureBlock failureBlock = ^(NSError *error)
         {
-            NSString *errorMessage = nil;
-            switch ([error code]) {
-                case ALAssetsLibraryAccessUserDeniedError:
-                case ALAssetsLibraryAccessGloballyDeniedError:
-                    errorMessage = @"The user has declined access to it.";
-                    break;
-                default:
-                    errorMessage = @"Reason unknown.";
-                    break;
-            }
-            
-            UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Load Photo Library Failure!" message:@"Photo Library isn't accessable.\nPlease enable it form the iOS Settings app > Privacy > Photo > Turn on" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
-            [alert show];
-            
+            [self.rootController showPhotoPermissionMsg];
         };
         
         // emumerate through our groups and only add groups that contain photos
@@ -523,10 +538,13 @@
             
             [self performSelectorInBackground:@selector(preparePhotos) withObject:nil];
         };
-
-        assetsLibrary = [[ALAssetsLibrary alloc] init];
-        [assetsLibrary enumerateGroupsWithTypes:ALAssetsGroupSavedPhotos usingBlock:listGroupBlock
-                                        failureBlock:failureBlock];
+        
+        [self.rootController checkPhotoPermission:^(BOOL isGranted) {
+            if(!isGranted) return;
+            assetsLibrary = [[ALAssetsLibrary alloc] init];
+            [assetsLibrary enumerateGroupsWithTypes:ALAssetsGroupSavedPhotos usingBlock:listGroupBlock
+                                       failureBlock:failureBlock];
+        }];
         
     }else [self performSelectorInBackground:@selector(preparePhotos) withObject:nil];
     
@@ -626,7 +644,7 @@
 #pragma action functions
 -(void) doneAction:(id)sender{
     
-
+    
     NSMutableArray* result = [[NSMutableArray alloc] init];
     for(NSIndexPath *indexPath in self.collectionView.indexPathsForSelectedItems)
     {
@@ -637,7 +655,7 @@
 }
 
 -(void) selectAllAction:(id)sender{
-    if ( [((UIBarButtonItem*)sender).title isEqualToString:@"Select All"] ) {
+    if ( [((UIBarButtonItem*)sender).title isEqualToString:LocalizedText(@"Select All", nil)] ) {
         
         for (int i = 0; i < _assets.count; i++) {
             if ( [_assets[i] class] != [ALAsset class] ) continue;
@@ -645,14 +663,14 @@
         }
         
         
-        [((UIBarButtonItem*)sender) setTitle:@"Deselect All"];
+        [((UIBarButtonItem*)sender) setTitle:LocalizedText(@"Deselect All",nil)];
     }else{
         
         for(NSIndexPath *indexPath in self.collectionView.indexPathsForSelectedItems) {
             [self.collectionView deselectItemAtIndexPath:indexPath animated:NO];
         }
         
-        [((UIBarButtonItem*)sender) setTitle:@"Select All"];
+        [((UIBarButtonItem*)sender) setTitle:LocalizedText(@"Select All",nil)];
     }
     
     [self updateTitle];
@@ -677,7 +695,7 @@
     if( isPhotoButton == NO
        && (self.rootController.mediaType == POPMediaPickerFileTypeAll || self.rootController.mediaType == POPMediaPickerFileTypeVideoOnly)
        && (
-        [self.rootController.popMediaPickerDelegate respondsToSelector:@selector(popMediaPickerDidSaveRecordVideoToTempFolder:picker:)]
+           [self.rootController.popMediaPickerDelegate respondsToSelector:@selector(popMediaPickerDidSaveRecordVideoToTempFolder:picker:)]
            || [self.rootController.popMediaPickerDelegate respondsToSelector:@selector(popMediaPickerProcessCustomRecordVideo:)]
            || [self.rootController.popMediaPickerDelegate respondsToSelector:@selector(popMediaPickerReturnCustomRecordVideoController:picker:)]
            || self.rootController.saveRecordVideoToTempFolderBlock
@@ -796,7 +814,7 @@
         }
         return;
     }
-        
+    
     
     if (self.rootController.returnOnSelectSingleItem)
     {
@@ -814,42 +832,79 @@
 -(void) updateTitle{
     if (self.rootController.returnOnSelectSingleItem) return;
     
-    labelToolbar.text = _collectionView.indexPathsForSelectedItems.count == 0 ? @"No Item Selected" : [NSString stringWithFormat:@"%@ Items Selected", [StringLib formatDouble:_collectionView.indexPathsForSelectedItems.count decimalLength:0]];
+    labelToolbar.text = _collectionView.indexPathsForSelectedItems.count == 0 ? LocalizedText(@"No Item Selected",nil) : [NSString stringWithFormat:LocalizedText(@"%@ Items Selected",nil), [StringLib formatDouble:_collectionView.indexPathsForSelectedItems.count decimalLength:0]];
     
     [doneButton setEnabled: _collectionView.indexPathsForSelectedItems.count > 0];
 }
 
-- (BOOL) startCamera:(BOOL)photoOnly
+-(BOOL)startCamera:(BOOL)photoOnly
 {
-    
     if ([UIImagePickerController isSourceTypeAvailable: UIImagePickerControllerSourceTypeCamera] == NO)
         return NO;
     
-    @try {
-        UIImagePickerController *cameraUI = [[UIImagePickerController alloc] init];
-        cameraUI.sourceType = UIImagePickerControllerSourceTypeCamera;
+    if ([AVCaptureDevice respondsToSelector:@selector(requestAccessForMediaType:completionHandler:)]) {
+        [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo completionHandler:^(BOOL granted) {
+            if(!granted){
+                [ViewLib alertWithTitle:LocalizedText(@"Camera Permission", nil) message:LocalizedText(@"App has no permission to take a photo and record video.", nil) fromViewController:self callback:^(NSString *buttonTitle, NSString *alertTitle) {
+                    
+                    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString] options:@{} completionHandler:nil];
+                } cancelButtonTitle:LocalizedText(@"Allow Access",nil) otherButtonTitles:nil];
+            }else{
+                self->isCameraGranted = YES;
+                [self _startCamera:photoOnly];
+            }
+        }];
         
-        if (photoOnly) {
-            cameraUI.mediaTypes = [[NSArray alloc] initWithObjects: (NSString *) kUTTypeImage, nil];
-            cameraUI.cameraCaptureMode = UIImagePickerControllerCameraCaptureModePhoto;
-        }else{
-            cameraUI.mediaTypes = [[NSArray alloc] initWithObjects: (NSString *) kUTTypeMovie, nil];
-            cameraUI.cameraCaptureMode = UIImagePickerControllerCameraCaptureModeVideo;
+        [AVCaptureDevice requestAccessForMediaType:AVMediaTypeAudio completionHandler:^(BOOL granted) {
+            if(!granted){
+                
+                [ViewLib alertWithTitle:LocalizedText(@"Microphone Permission", nil) message:LocalizedText(@"App has no permission to record video with audio.", nil) fromViewController:self callback:^(NSString *buttonTitle, NSString *alertTitle) {
+                    //                    [self actionClose:nil];
+                    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString] options:@{} completionHandler:nil];
+                } cancelButtonTitle:LocalizedText(@"Allow Access",nil) otherButtonTitles:nil];
+            }else{
+                self->isMicrophoneGranted = YES;
+                [self _startCamera:photoOnly];
+            }
+        }];
+    }
+    
+    return YES;
+}
+
+- (BOOL)_startCamera:(BOOL)photoOnly
+{
+    if(!isCameraGranted || !isMicrophoneGranted || isOpenCameraPicker) return NO;
+    isOpenCameraPicker = YES;
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        @try {
+            UIImagePickerController *cameraUI = [[UIImagePickerController alloc] init];
+            cameraUI.sourceType = UIImagePickerControllerSourceTypeCamera;
+            
+            if (photoOnly) {
+                cameraUI.mediaTypes = [[NSArray alloc] initWithObjects: (NSString *) kUTTypeImage, nil];
+                cameraUI.cameraCaptureMode = UIImagePickerControllerCameraCaptureModePhoto;
+            }else{
+                cameraUI.mediaTypes = [[NSArray alloc] initWithObjects: (NSString *) kUTTypeMovie, nil];
+                cameraUI.cameraCaptureMode = UIImagePickerControllerCameraCaptureModeVideo;
+            }
+            
+            // Hides the controls for moving & scaling pictures, or for
+            // trimming movies. To instead show the controls, use YES.
+            cameraUI.allowsEditing = NO;
+            cameraUI.delegate = self;
+            
+            [self addCustomController:cameraUI];
         }
-        
-        // Hides the controls for moving & scaling pictures, or for
-        // trimming movies. To instead show the controls, use YES.
-        cameraUI.allowsEditing = NO;
-        cameraUI.delegate = self;
-        
-        [self addCustomController:cameraUI];
-    }
-    @catch (NSException *exception) {
-        NSLog(@"bug: %@", exception);
-    }
-    @finally {
-        
-    }
+        @catch (NSException *exception) {
+            NSLog(@"bug: %@", exception);
+        }
+        @finally {
+            
+        }
+    });
+    
     
     
     

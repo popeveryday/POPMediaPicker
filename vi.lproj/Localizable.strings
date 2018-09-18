@@ -1,0 +1,21 @@
+/* 
+  Localizable.strings
+  Pods
+
+  Created by Trung Pham on 9/18/18.
+  
+*/
+
+"Camera Permission"="Quyền truy cập \"Camera\"";
+"App has no permission to take a photo and record video."="Phần mềm chưa có quyền truy cập \"Camera\" để chụp ảnh và quay video.";
+"Microphone Permission"="Quyền truy cập \"Micro\"";
+"App has no permission to record video with audio."="Phần mềm chưa có quyền truy cập \"Microphone\" để thu âm video.";
+"No Item Selected" = "Chưa mục nào được chọn";
+"Photo Library" = "Thư viện hình ảnh";
+"Photo Permission" = "Quyền truy cập hình ảnh";
+"Saving Images" = "Đang tải hình";
+"%@ Items Selected" = "%@ mục được chọn";
+"Cancel" = "Huỷ bỏ";
+"Deselect All" = "Bỏ chọn tất cả";
+"Select All" = "Chọn Tất Cả";
+"please wait" = "Vui lòng chờ trong giây lát";
